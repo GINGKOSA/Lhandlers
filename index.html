@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lhandlers Wiki</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="wiki.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="hamburger" id="hamburger" onclick="toggleSidebar()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+  <a class="topbar-logo" href="#home">✦ LHANDLERS</a>
+  <div class="topbar-sep"></div>
+  <input class="topbar-search" type="text" placeholder="Rechercher dans le wiki..." id="searchInput" oninput="liveSearch(this.value)">
+  <div class="topbar-right">
+    <div class="status-dot"></div>
+    ELEBELLUM · v0.4
+  </div>
+</div>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-group">
+      <div class="sidebar-group-title collapsible" onclick="toggleGroup(this, event)"><span class="collapse-chevron">▾</span>Lhandlers</div>
+      <div class="sidebar-group-items">
+        <a class="sidebar-link" onclick="navigate('home')" id="nav-home"><span class="sidebar-icon">⌂</span> Accueil</a>
+        <a class="sidebar-link" onclick="navigate('lhandlers')" id="nav-lhandlers"><span class="sidebar-icon">✦</span> Lhandlers</a>
+        <a class="sidebar-link" onclick="navigate('spectateur')" id="nav-spectateur"><span class="sidebar-icon">👁</span> Spectateur Suprême</a>
+      </div>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title collapsible" onclick="toggleGroup(this, event)"><span class="collapse-chevron">▾</span>Cosmologie</div>
+      <div class="sidebar-group-items">
+        <a class="sidebar-link" onclick="navigate('cosmologie')" id="nav-cosmologie"><span class="sidebar-icon">✦</span> Cosmologie</a>
+        <a class="sidebar-link" onclick="navigate('giatyr')" id="nav-giatyr"><span class="sidebar-icon">◎</span> Giatyr</a>
+        <a class="sidebar-link" onclick="navigate('tenryobu')" id="nav-tenryobu"><span class="sidebar-icon">◎</span> Tenryobu</a>
+      </div>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title collapsible" onclick="toggleGroup(this, event)"><span class="collapse-chevron">▾</span>Le Monde</div>
+      <div class="sidebar-group-items">
+        <a class="sidebar-link" onclick="navigate('tunghood')" id="nav-tunghood"><span class="sidebar-icon">◎</span> Tunhgoud</a>
+        <a class="sidebar-link" onclick="navigate('chronologie')" id="nav-chronologie"><span class="sidebar-icon">⧗</span> Chronologie</a>
+        <a class="sidebar-link" onclick="navigate('farkaras')" id="nav-farkaras"><span class="sidebar-icon">🌋</span> Farkaras</a>
+        <a class="sidebar-link" onclick="navigate('drakarnias')" id="nav-drakarnias"><span class="sidebar-icon">🏚</span> Drakarnias</a>
+        <a class="sidebar-link" onclick="navigate('rignaras')" id="nav-rignaras"><span class="sidebar-icon">🏝</span> Rignaras</a>
+        <a class="sidebar-link" onclick="navigate('volioce')" id="nav-volioce"><span class="sidebar-icon">🌿</span> Volioce</a>
+      </div>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title collapsible" onclick="toggleGroup(this, event)"><span class="collapse-chevron">▾</span>Espèces</div>
+      <div class="sidebar-group-items">
+        <a class="sidebar-link" onclick="navigate('firigilians')" id="nav-firigilians"><span class="sidebar-icon">⬡</span> Firigilians</a>
+        <a class="sidebar-link" onclick="navigate('farkeyes')" id="nav-farkeyes"><span class="sidebar-icon">⬡</span> Farkeyes</a>
+        <a class="sidebar-link" onclick="navigate('avaans')" id="nav-avaans"><span class="sidebar-icon">⬡</span> Avaan's</a>
+        <a class="sidebar-link" onclick="navigate('yvaanspage')" id="nav-yvaanspage"><span class="sidebar-icon">⬡</span> Yvaan's</a>
+        <a class="sidebar-link" onclick="navigate('paradeath')" id="nav-paradeath"><span class="sidebar-icon">⬡</span> Paradeath</a>
+        <a class="sidebar-link" onclick="navigate('wargnyr')" id="nav-wargnyr"><span class="sidebar-icon">⬡</span> Wargnyr</a>
+        <a class="sidebar-link" onclick="navigate('bloodeater')" id="nav-bloodeater"><span class="sidebar-icon">⬡</span> Bloodeater</a>
+        <a class="sidebar-link" onclick="navigate('humains')" id="nav-humains"><span class="sidebar-icon">⬡</span> Humains</a>
+      </div>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title collapsible" onclick="toggleGroup(this, event)"><span class="collapse-chevron">▾</span>Magie &amp; Pouvoirs</div>
+      <div class="sidebar-group-items">
+        <a class="sidebar-link" onclick="navigate('demonite')" id="nav-demonite"><span class="sidebar-icon">◆</span> Demonite</a>
+        <a class="sidebar-link" onclick="navigate('elus')" id="nav-elus"><span class="sidebar-icon">◆</span> Les Élus</a>
+        <a class="sidebar-link" onclick="navigate('pourpalite')" id="nav-pourpalite"><span class="sidebar-icon">◆</span> Pourpalite</a>
+      </div>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title collapsible" onclick="toggleGroup(this, event)"><span class="collapse-chevron">▾</span>Personnages</div>
+      <div class="sidebar-group-items">
+        <a class="sidebar-link" onclick="navigate('jarlarkeyes')" id="nav-jarlarkeyes"><span class="sidebar-icon">◈</span> Jarlarkeyes</a>
+        <a class="sidebar-link" onclick="navigate('junma')" id="nav-junma"><span class="sidebar-icon">◈</span> Junma</a>
+        <a class="sidebar-link" onclick="navigate('omega')" id="nav-omega"><span class="sidebar-icon">◈</span> Omega</a>
+        <a class="sidebar-link" onclick="navigate('gingkosa')" id="nav-gingkosa"><span class="sidebar-icon">◈</span> Gingkosa</a>
+        <a class="sidebar-link" onclick="navigate('garrius')" id="nav-garrius"><span class="sidebar-icon">◈</span> Garrius</a>
+        <a class="sidebar-link" onclick="navigate('jenas')" id="nav-jenas"><span class="sidebar-icon">◈</span> Jenas</a>
+        <a class="sidebar-link" onclick="navigate('hope')" id="nav-hope"><span class="sidebar-icon">◈</span> Hope Diapearlake</a>
+      </div>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title collapsible" onclick="toggleGroup(this, event)"><span class="collapse-chevron">▾</span>Textes Canoniques</div>
+      <div class="sidebar-group-items">
+        <a class="sidebar-link" onclick="navigate('prologue')" id="nav-prologue"><span class="sidebar-icon">❝</span> Prologue Lhandlers</a>
+        <a class="sidebar-link" onclick="navigate('intro-elebellum')" id="nav-intro-elebellum"><span class="sidebar-icon">❝</span> Intro Elebellum</a>
+      </div>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title collapsible" onclick="toggleGroup(this, event)"><span class="collapse-chevron">▾</span>Organisations</div>
+      <div class="sidebar-group-items">
+        <a class="sidebar-link" onclick="navigate('upstars')" id="nav-upstars"><span class="sidebar-icon">◈</span> Upstars</a>
+      </div>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-group-title collapsible" onclick="toggleGroup(this, event)"><span class="collapse-chevron">▾</span>Méta</div>
+      <div class="sidebar-group-items">
+        <a class="sidebar-link" onclick="navigate('mysteres')" id="nav-mysteres"><span class="sidebar-icon">🔒</span> Mystères</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- OVERLAY MOBILE (couvre uniquement le contenu, pas la sidebar) -->
+  <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- ZONE DE CONTENU PRINCIPALE -->
+  <main class="main" id="main-content">
+    <div id="page-container">
+      <div class="loading-page">Chargement…</div>
+    </div>
+  </main>
+
+</div>
+
+<script src="pages.js"></script>
+<script src="wiki.js"></script>
+
+</body>
+</html>
