@@ -1,67 +1,145 @@
 /* ═══════════════════════════════════════════════════════════════
-   LHANDLERS WIKI — wiki.js
-   Toute la logique applicative : navigation, recherche, sidebar
+   LHANDLERS WIKI — wiki.js  v0.7
+   Logique pure — ne jamais modifier ce fichier pour ajouter
+   une page. Tout passe par registry.js.
+
+   Corrections v0.7 :
+   - Suppression de _pendingPage (variable inutilisée)
+   - loadScript : timeout de sécurité à 5s sur le polling
+   - renderSearch : query échappée contre injection XSS
+   - buildSidebar : HTML construit en une seule string (plus de +=)
    ═══════════════════════════════════════════════════════════════ */
 
-// ── CONTENU DES PAGES ─────────────────────────────────────────────
-// Injecté depuis index.html via window.PAGES
-// ── INDEX DE RECHERCHE ────────────────────────────────────────────
-var searchIndex = [
-  { id:'home',           title:'Accueil',                  keywords:'accueil wiki lhandlers elebellum' },
-  { id:'lhandlers',      title:'Lhandlers',                keywords:'multivers cinema spectateur supremme univers' },
-  { id:'spectateur',     title:'Spectateur Suprême',       keywords:'spectateur supreme createur lhandlers elus meta imperceptible' },
-  { id:'cosmologie',     title:'Cosmologie',               keywords:'cosmologie giatyr tenryobu dieux forces fondamentales desequilibre' },
-  { id:'giatyr',         title:'Giatyr',                   keywords:'giatyr bien paix creation planete labyrinthe kaio' },
-  { id:'tenryobu',       title:'Tenryobu',                 keywords:'tenryobu mal guerre destruction murmures impulsions insidieux' },
-  { id:'tunghood',       title:'Tunhgoud',                 keywords:'tunghood disque iles volantes trou noir boule lumineuse arche cosmique donut climat zones' },
-  { id:'firigilians',    title:'Les Firigilians',          keywords:'firigilians pieuvres cyborgs immortels connaissance kardashev disparus genocide pourpalite sang farkeyes elus tunhgoud scioprius protocole halo sans remords' },
-  { id:'farkeyes',       title:'Les Farkeyes',             keywords:'farkeyes reptiliens peau rouge conquete ego cicatrices demonite biologique jarlarkeyes omega spartiate mutation pourpalite betail sang scioprius farkaras tresantes lezards' },
-  { id:'farkaras',       title:'Farkaras',                 keywords:'farkaras empire farkeyes territoires conquis tunghood jarlarkeyes capitale drakarnias sandmen' },
-  { id:'drakarnias',     title:'Drakarnias',               keywords:'drakarnias capitale farkaras scioprius volcanique lave chaleur firigilians grottes palais jarlarkeyes volcan technologie heritee' },
-  { id:'avaans',         title:"Les Avaan's",              keywords:"avaans vayolis atteleck chats humanoïdes nature technologie bouclier zombies trahison elfe cyberpunk" },
-  { id:'yvaanspage',     title:"Les Yvaan's",              keywords:"yvaanspage yvaans nature pacifistes arbres ancestres avaans primitif" },
-  { id:'paradeath',      title:'Les Paradeath',            keywords:'paradeath parasites cérébraux contrôle total nuque expérience firigilians echec volioce cerveau tentaculaire' },
-  { id:'wargnyr',        title:'Les Wargnyr',              keywords:'wargnyr loups humanoïdes rignaras clans dispersés lacs zones humides tunhgoud expérience firigilians' },
-  { id:'bloodeater',     title:'Les Bloodeater',           keywords:'bloodeater chauves-souris humanoïdes rignaras chasse nocturne écholocation clans falaises grottes expérience firigilians' },
-  { id:'humains',        title:'Les Humains',              keywords:'humains arch 10000 survivants terre detruite loi reproduction elu bombe sagesse philosophie gingkosa garrius nexios gwemelis' },
-  { id:'demonite',       title:'La Demonite',              keywords:'demonite cristal bordeaux sang farkeyes massacre genocide pouvoirs contact vol inerte vivant exception distance biologique pourpalite violet' },
-  { id:'elus',           title:'Les Élus',                 keywords:'elus designes spectateur supreme demonite ignorants nature giatyr tenryobu balance gingkosa omega' },
-  { id:'pourpalite',     title:'La Pourpalite',            keywords:'pourpalite cristal violet quasi-incassable energie infinie scioprius firigilians sang farkeyes demonite bordeaux recharge guerre crise mutation platos' },
-  { id:'jarlarkeyes',    title:'Jarlarkeyes',              keywords:'jarlarkeyes chef supreme farkeyes invaincu cicatrices longevite mythique omega pere jenas junma frere evolution combat pouvoir adaptation force' },
-  { id:'junma',          title:'Junma',                    keywords:'junma frere jarlarkeyes gravite pouvoir non-vivant voyageur jenas omega secret intelligence combat' },
-  { id:'omega',          title:'Omega',                    keywords:'omega fils jarlarkeyes renegat elu farkeyes allie humains traducteur firigilians trois cicatrices tresantes mutin' },
-  { id:'chronologie',    title:'Chronologie',              keywords:'chronologie an 0 arrivee humains tunghood firigilians atteleck terre histoire' },
-  { id:'prologue',       title:'Prologue — Lhandlers',     keywords:'prologue texte canonique lhandlers spectateur piano ocean cinema trone' },
-  { id:'intro-elebellum',title:'Introduction Elebellum',   keywords:'introduction elebellum giatyr tenryobu elus balance cycle recommence' },
-  { id:'mysteres',       title:'Mystères & Fils Narratifs',keywords:'mysteres trou noir firigilians arch jarlarkeyes elu humain loi reproduction vayolis trahison bouclier gingkosa' },
-  { id:'gingkosa',       title:'Gingkosa',                 keywords:'gingkosa elu humain premier ne tunhgoud nexios gwemelis demonite inactif' },
-  { id:'garrius',        title:'Garrius',                  keywords:'garrius arch commandant scientifique upstars loi reproduction 10000 survivants trou de ver' },
-  { id:'jenas',          title:'Jenas',                    keywords:'jenas compagne jarlarkeyes mere omega secret junma farkeyes decedee accouchement' },
-  { id:'hope',           title:'Diapearlake',              keywords:'hope diapearlake president nations unies traitre destruction terre organisation bombe upstars' },
-  { id:'upstars',        title:'Upstars',                  keywords:'upstars soldats elite nations unies missions impossibles terre garrius hope diapearlake' },
-  { id:'rignaras',       title:'Rignaras',                 keywords:'rignaras archipel iles volantes lacs zones humides monde natal wargnyr bloodeater pourpalite lune artificielle firigilians' },
-  { id:'volioce',        title:'Volioce',                  keywords:'volioce archipel iles volantes forets nature yvaans avaans evolution forcée firigilians' },
-];
+// ── INIT ──────────────────────────────────────────────────────────
+window.PAGES        = window.PAGES || {};
+var currentPage     = null;
+var _loadingScripts = {};    // scripts déjà injectés (évite les doublons)
+
+// Pré-charger la page 404 dès le démarrage
+(function() {
+  var s = document.createElement('script');
+  s.src = 'pages/404.js';
+  document.head.appendChild(s);
+})();
+
+// ── UTILITAIRE : échappement HTML ────────────────────────────────
+function escapeHtml(str) {
+  return (str || '').replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;');
+}
+
+// ── GÉNÉRATION AUTOMATIQUE DE LA SIDEBAR ─────────────────────────
+(function buildSidebar() {
+  var nav = document.getElementById('sidebar');
+  if (!nav) return;
+
+  // Grouper les entrées par category, dans l'ordre d'apparition du registry
+  var groups = [];
+  var groupMap = {};
+  window.REGISTRY.forEach(function(entry) {
+    if (entry.id === 'home') return; // home = logo, pas dans la sidebar
+    var cat = entry.category;
+    if (!groupMap[cat]) {
+      groupMap[cat] = { title: cat, items: [] };
+      groups.push(groupMap[cat]);
+    }
+    groupMap[cat].items.push(entry);
+  });
+
+  // Construire tout le HTML en une seule string, puis l'assigner une fois
+  var html =
+    '<div class="sidebar-group">' +
+      '<div class="sidebar-group-items">' +
+        '<a class="sidebar-link" onclick="navigate(\'home\')" id="nav-home">' +
+          '<span class="sidebar-icon">⌂</span> Accueil' +
+        '</a>' +
+      '</div>' +
+    '</div>';
+
+  groups.forEach(function(group) {
+    var itemsHtml = group.items.map(function(entry) {
+      return '<a class="sidebar-link" onclick="navigate(\'' + entry.id + '\')" id="nav-' + entry.id + '">' +
+               '<span class="sidebar-icon">' + (entry.icon || '◎') + '</span> ' + entry.title +
+             '</a>';
+    }).join('');
+
+    html +=
+      '<div class="sidebar-group">' +
+        '<div class="sidebar-group-title collapsible" onclick="toggleGroup(this,event)">' +
+          '<span class="collapse-chevron">▾</span>' + group.title +
+        '</div>' +
+        '<div class="sidebar-group-items">' + itemsHtml + '</div>' +
+      '</div>';
+  });
+
+  nav.innerHTML = html;
+})();
+
+// ── LAZY LOADING ──────────────────────────────────────────────────
+// Charge le script d'une page uniquement quand on en a besoin,
+// et appelle le callback une fois prêt.
+function loadScript(pageId, callback) {
+  // Déjà dans PAGES → rien à charger
+  if (window.PAGES[pageId]) { callback(); return; }
+
+  // Script déjà en cours de chargement → on attend (avec timeout de sécurité)
+  if (_loadingScripts[pageId]) {
+    var elapsed = 0;
+    var check = setInterval(function() {
+      elapsed += 20;
+      if (window.PAGES[pageId]) {
+        clearInterval(check);
+        callback();
+      } else if (elapsed >= 5000) {
+        clearInterval(check);
+        console.warn('[wiki] Timeout en attendant pages/' + pageId + '.js');
+        callback(); // on laisse renderContent gérer l'absence
+      }
+    }, 20);
+    return;
+  }
+
+  _loadingScripts[pageId] = true;
+  var s = document.createElement('script');
+  s.src = 'pages/' + pageId + '.js';
+  s.onload = function() {
+    if (window.PAGES[pageId]) {
+      callback();
+    } else {
+      // Le fichier a chargé mais n'a pas encore exécuté window.PAGES[] (rare)
+      setTimeout(function() { callback(); }, 10);
+    }
+  };
+  s.onerror = function() {
+    console.warn('[wiki] Script introuvable : pages/' + pageId + '.js');
+    callback(); // on laisse renderContent gérer le 404
+  };
+  document.head.appendChild(s);
+}
 
 // ── ROUTER ────────────────────────────────────────────────────────
-var currentPage = null;
-
 function navigate(pageId) {
   if (!pageId) pageId = 'home';
   history.pushState({ page: pageId }, '', '#' + pageId);
+  closeSidebar();   // ferme la sidebar mobile après chaque navigation
   loadPage(pageId);
 }
 
 function loadPage(pageId) {
   if (!pageId) pageId = 'home';
 
+  // Marquer la sidebar
   document.querySelectorAll('.sidebar-link').forEach(function(l) { l.classList.remove('active'); });
   var navEl = document.getElementById('nav-' + pageId);
   if (navEl) navEl.classList.add('active');
 
-  var entry = searchIndex.find(function(e) { return e.id === pageId; });
+  // Titre navigateur
+  var entry = window.REGISTRY.find(function(e) { return e.id === pageId; });
   document.title = (entry ? entry.title + ' — ' : '') + 'Lhandlers Wiki';
 
+  // Vider la recherche sauf si on est sur la page de recherche
   if (pageId !== 'search') {
     document.getElementById('searchInput').value = '';
   }
@@ -70,14 +148,17 @@ function loadPage(pageId) {
 
   if (pageId === 'search') { renderSearch(''); return; }
 
-  if (window.PAGES && window.PAGES[pageId]) {
-    renderContent(window.PAGES[pageId]);
-    return;
-  }
-
+  // Afficher le spinner pendant le chargement
   document.getElementById('page-container').innerHTML =
-    '<div class="page-header"><div class="page-title">Page introuvable</div>' +
-    '<div class="page-subtitle">L\'entrée "' + pageId + '" n\'existe pas encore.</div></div>';
+    '<div class="loading-page">CHARGEMENT…</div>';
+
+  loadScript(pageId, function() {
+    if (window.PAGES[pageId]) {
+      renderContent(window.PAGES[pageId]);
+    } else {
+      renderContent(window.PAGES['404'].replace('{{id}}', escapeHtml(pageId)));
+    }
+  });
 }
 
 function renderContent(html) {
@@ -87,7 +168,7 @@ function renderContent(html) {
   window.scrollTo(0, 0);
 }
 
-// ── RECHERCHE ────────────────────────────────────────────────────
+// ── RECHERCHE ─────────────────────────────────────────────────────
 function liveSearch(query) {
   if (query && query.length >= 1) {
     if (currentPage !== 'search') {
@@ -104,33 +185,38 @@ function liveSearch(query) {
 function renderSearch(query) {
   var container = document.getElementById('page-container');
   var ql = (query || '').toLowerCase().trim();
-  var resultsHtml = '';
 
+  var results = ql.length >= 1
+    ? window.REGISTRY.filter(function(item) {
+        return item.title.toLowerCase().includes(ql) || item.keywords.toLowerCase().includes(ql);
+      })
+    : [];
+
+  var resultsHtml = '';
   if (ql.length >= 1) {
-    var results = searchIndex.filter(function(item) {
-      return item.title.toLowerCase().includes(ql) || item.keywords.toLowerCase().includes(ql);
-    });
     resultsHtml = results.length === 0
       ? '<div class="no-results">AUCUN RÉSULTAT TROUVÉ</div>'
       : results.map(function(r) {
           return '<a class="card gold" style="cursor:pointer;margin-bottom:10px;display:block;text-decoration:none;" onclick="navigate(\'' + r.id + '\')">' +
-            '<div class="card-title">' + r.title + '</div>' +
+            '<div class="card-title">' + (r.icon ? r.icon + ' ' : '') + r.title + '</div>' +
             '<p style="font-size:14px;color:var(--text-dim);">' + r.keywords.split(' ').slice(0,8).join(' · ') + '</p></a>';
         }).join('');
   }
 
   container.innerHTML =
-    '<div class="page-header"><div class="page-breadcrumb">Recherche</div>' +
-    '<div class="page-title">Résultats de recherche</div>' +
-    (ql ? '<div class="page-subtitle">' + searchIndex.filter(function(i){ return i.title.toLowerCase().includes(ql)||i.keywords.toLowerCase().includes(ql); }).length + ' résultat(s) pour "' + query + '"</div>' : '') +
-    '</div><div id="search-results">' + resultsHtml + '</div>';
+    '<div class="page-header">' +
+      '<div class="page-breadcrumb">Recherche</div>' +
+      '<div class="page-title">Résultats de recherche</div>' +
+      (ql ? '<div class="page-subtitle">' + results.length + ' résultat(s) pour "' + escapeHtml(query) + '"</div>' : '') +
+    '</div>' +
+    '<div id="search-results">' + resultsHtml + '</div>';
 }
 
-// ── SIDEBAR MOBILE ───────────────────────────────────────────────
+// ── SIDEBAR MOBILE ────────────────────────────────────────────────
 function toggleSidebar() {
-  var sidebar = document.getElementById('sidebar');
-  var overlay = document.getElementById('sidebar-overlay');
-  var hamburger = document.getElementById('hamburger');
+  var sidebar    = document.getElementById('sidebar');
+  var overlay    = document.getElementById('sidebar-overlay');
+  var hamburger  = document.getElementById('hamburger');
   if (sidebar.classList.contains('open')) {
     closeSidebar();
   } else {
@@ -146,17 +232,17 @@ function closeSidebar() {
   document.getElementById('hamburger').classList.remove('open');
 }
 
-// ── GROUPES REPLIABLES ───────────────────────────────────────────
+// ── GROUPES REPLIABLES ────────────────────────────────────────────
 function toggleGroup(titleEl, event) {
   if (event) event.stopPropagation();
-  var items = titleEl.nextElementSibling;
-  var chevron = titleEl.querySelector('.collapse-chevron');
+  var items    = titleEl.nextElementSibling;
+  var chevron  = titleEl.querySelector('.collapse-chevron');
   var collapsed = items.classList.contains('collapsed');
   items.classList.toggle('collapsed', !collapsed);
   chevron.style.transform = collapsed ? 'rotate(0deg)' : 'rotate(-90deg)';
 }
 
-// ── HASH NAVIGATION ──────────────────────────────────────────────
+// ── HASH NAVIGATION ───────────────────────────────────────────────
 window.addEventListener('popstate', function(e) {
   loadPage((e.state && e.state.page) || getHashPage());
 });
@@ -165,10 +251,10 @@ function getHashPage() {
   return window.location.hash.replace('#', '') || 'home';
 }
 
-// ── KEYBOARD SEARCH ──────────────────────────────────────────────
+// ── KEYBOARD SEARCH ───────────────────────────────────────────────
 document.getElementById('searchInput').addEventListener('keydown', function(e) {
   if (e.key === 'Escape') { this.value = ''; navigate(currentPage || 'home'); }
 });
 
-// ── INIT ─────────────────────────────────────────────────────────
+// ── INIT ──────────────────────────────────────────────────────────
 loadPage(getHashPage());

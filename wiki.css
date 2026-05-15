@@ -203,8 +203,8 @@ body::before {
 }
 .sidebar-group-items {
   overflow: hidden;
-  max-height: 1000px;
-  transition: max-height 0.25s ease, opacity 0.2s ease;
+  max-height: 2000px;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
   opacity: 1;
 }
 .sidebar-group-items.collapsed { max-height: 0; opacity: 0; }
@@ -507,6 +507,46 @@ strong { color: var(--text-bright); font-weight: 600; }
 /* ── SEARCH ── */
 .search-result-highlight { background: rgba(200,169,110,0.15); border-radius: 3px; padding: 0 2px; }
 .no-results { padding: 40px; text-align: center; color: var(--text-dim); font-family: 'Share Tech Mono', monospace; font-size: 12px; letter-spacing: 2px; }
+
+/* ── UTILITAIRES (remplacent les styles inline répétitifs) ── */
+.mt-8  { margin-top: 8px; }
+.mt-10 { margin-top: 10px; }
+.mt-12 { margin-top: 12px; }
+.mt-14 { margin-top: 14px; }
+.mt-20 { margin-top: 20px; }
+.mb-10 { margin-bottom: 10px; }
+
+/* Texte note italique atténuée — usage : <p class="p-note"> */
+.p-note {
+  font-size: 14px;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* Mini-grille 2 colonnes — usage dans les cards de comparaison */
+.mini-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+.mini-grid-card {
+  border-radius: 7px;
+  padding: 12px;
+}
+.mini-grid-card.red {
+  background: rgba(192,57,43,0.08);
+  border: 1px solid rgba(192,57,43,0.2);
+}
+.mini-grid-card-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  color: #e74c3c;
+}
+.mini-grid-card p { font-size: 13px; }
 
 /* ══════════════════════════════════════════════════════════════
    RESPONSIVE
