@@ -1,11 +1,9 @@
 window.PAGES = window.PAGES || {};
-window.PAGES["wargnyr"] = `<div class="page-header">
-      <div class="page-breadcrumb"><a onclick="navigate('home')">Accueil</a> › Espèces › Wargnyr</div>
-      <div class="page-title">Les Wargnyr</div>
+window.PAGES["wargnyr"] = `<div class="page-header">      <div class="page-title">Les Wargnyr</div>
       <div class="page-subtitle">LOUPS HUMANOÏDES · CLANS DE RIGNARAS · EXPÉRIENCE FIRIGILIANS</div>
       <div class="page-tags">
-        <span class="tag" style="background:rgba(101,67,33,0.2);color:#c8a46e;border-color:rgba(101,67,33,0.3);">Loups humanoïdes</span>
-        <span class="tag" style="background:rgba(101,67,33,0.2);color:#c8a46e;border-color:rgba(101,67,33,0.3);">Technologie primitive</span>
+        <span class="tag brown">Loups humanoïdes</span>
+        <span class="tag brown">Technologie primitive</span>
         <span class="tag gold">Rignaras</span>
         <span class="tag gold">Expérience Firigilians</span>
       </div>
@@ -19,7 +17,7 @@ window.PAGES["wargnyr"] = `<div class="page-header">
       <div class="infobox-row"><div class="infobox-key">BIOME</div><div class="infobox-val">Lacs, zones humides</div></div>
       <div class="infobox-row"><div class="infobox-key">ORGANISATION</div><div class="infobox-val">Clans dispersés, à peine sédentaires</div></div>
       <div class="infobox-row"><div class="infobox-key">TECHNOLOGIE</div><div class="infobox-val">Primitive — outils taillés, feu</div></div>
-      <div class="infobox-row"><div class="infobox-key">PRÉDATEUR NATUREL</div><div class="infobox-val"><a class="wlink" onclick="navigate('bloodeater')">Bloodeater</a></div></div>
+      <div class="infobox-row"><div class="infobox-key">PRÉDATEUR NATUREL</div><div class="infobox-val"><a class="wlink" data-page="bloodeater">Bloodeater</a></div></div>
       <div class="infobox-row"><div class="infobox-key">ORIGINE</div><div class="infobox-val">Loups spatiaux — évolution forcée</div></div>
       <div class="infobox-row"><div class="infobox-key">STATUT</div><div class="infobox-val">Actifs · Vaguement conscients du monde extérieur</div></div>
     </div>
@@ -39,9 +37,9 @@ window.PAGES["wargnyr"] = `<div class="page-header">
     <div class="wiki-section">
       <div class="wiki-section-title">🏕 Organisation Sociale — Les Clans</div>
       <p>Les Wargnyr sont profondément <strong>tournés vers la famille</strong>. Le clan n'est pas une alliance de circonstance — c'est le cœur de leur identité. On naît dans un clan, on y vit, on y meurt. Les liens entre membres sont intenses : les anciens transmettent les savoirs de survie aux jeunes dès leur plus jeune âge, les adultes protègent collectivement les petits, les deuils sont partagés par tous.</p>
-      <p class="mt-10">Chaque clan contrôle un territoire autour d'un lac ou d'un réseau de cours d'eau. Les rapports entre clans voisins oscillent entre <strong>méfiance et trêve pragmatique</strong> — on s'évite plus qu'on ne se combat, car chacun a ses propres problèmes avec les <a class="wlink" onclick="navigate('bloodeater')">Bloodeater</a>. En temps de crise, des clans peuvent fusionner temporairement pour se défendre.</p>
-      <div class="card mt-14" style="border-color:rgba(101,67,33,0.3);background:rgba(101,67,33,0.06);">
-        <div class="card-title" style="color:#c8a46e;">Technologie Primitive</div>
+      <p class="mt-10">Chaque clan contrôle un territoire autour d'un lac ou d'un réseau de cours d'eau. Les rapports entre clans voisins oscillent entre <strong>méfiance et trêve pragmatique</strong> — on s'évite plus qu'on ne se combat, car chacun a ses propres problèmes avec les <a class="wlink" data-page="bloodeater">Bloodeater</a>. En temps de crise, des clans peuvent fusionner temporairement pour se défendre.</p>
+      <div class="card brown mt-14">
+        <div class="card-title">Technologie Primitive</div>
         <p>Outils en pierre et en os. Feu maîtrisé. Palissades en bois autour des campements, pirogues creusées pour naviguer sur les lacs. L'intelligence collective des Wargnyr est entièrement orientée vers la <strong>survie immédiate</strong> — et la protection des leurs.</p>
       </div>
     </div>
@@ -55,7 +53,7 @@ window.PAGES["wargnyr"] = `<div class="page-header">
 
     <div class="wiki-section">
       <div class="wiki-section-title">🦇 La Menace Bloodeater</div>
-      <p>Les <a class="wlink" onclick="navigate('bloodeater')">Bloodeater</a> sont les prédateurs naturels des Wargnyr — issus de la même expérience Firigilians, nés sur la même île, mais adaptés à la chasse nocturne et aérienne. Pour les Wargnyr, ils ne sont pas une abstraction ou une légende : c'est une <strong>réalité quotidienne</strong>.</p>
+      <p>Les <a class="wlink" data-page="bloodeater">Bloodeater</a> sont les prédateurs naturels des Wargnyr — issus de la même expérience Firigilians, nés sur la même île, mais adaptés à la chasse nocturne et aérienne. Pour les Wargnyr, ils ne sont pas une abstraction ou une légende : c'est une <strong>réalité quotidienne</strong>.</p>
       <p class="mt-10">La quasi-totalité de l'organisation sociale Wargnyr — les palissades, les veilles nocturnes, le regroupement des clans en saison froide, les rituels — tourne autour d'une seule question : <strong>comment survivre à la nuit</strong>.</p>
       <div class="mystery mt-12">
         <div class="mystery-icon">⚠</div>
@@ -78,9 +76,9 @@ window.PAGES["wargnyr"] = `<div class="page-header">
     <div class="related">
       <div class="related-title">VOIR AUSSI</div>
       <div class="related-links">
-        <a class="related-link" onclick="navigate('bloodeater')">🦇 Bloodeater</a>
-        <a class="related-link" onclick="navigate('firigilians')">🦑 Firigilians</a>
-        <a class="related-link" onclick="navigate('pourpalite')">◆ Pourpalite</a>
-        <a class="related-link" onclick="navigate('tunghood')">◎ Tunhgoud</a>
+        <a class="related-link" data-page="bloodeater">🦇 Bloodeater</a>
+        <a class="related-link" data-page="firigilians">🦑 Firigilians</a>
+        <a class="related-link" data-page="pourpalite">◆ Pourpalite</a>
+        <a class="related-link" data-page="tunhgoud">◎ Tunhgoud</a>
       </div>
     </div>`;

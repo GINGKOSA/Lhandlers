@@ -1,7 +1,5 @@
 window.PAGES = window.PAGES || {};
-window.PAGES["upstars"] = `<div class="page-header">
-        <div class="page-breadcrumb"><a onclick="navigate('home')">Accueil</a> &rsaquo; Organisations &rsaquo; Upstars</div>
-        <div class="page-title">Le Projet Upstars</div>
+window.PAGES["upstars"] = `<div class="page-header">        <div class="page-title">Le Projet Upstars</div>
         <div class="page-subtitle">SOLDATS D&apos;&Eacute;LITE DES NATIONS UNIES &middot; MISSIONS IMPOSSIBLES &middot; TERRE</div>
         <div class="page-tags">
           <span class="tag blue">Nations Unies</span>
@@ -29,12 +27,12 @@ window.PAGES["upstars"] = `<div class="page-header">
         <div class="wiki-section-title">&#128302; Les Deux Derni&egrave;res Missions</div>
         <div class="card blue">
           <div class="card-title">Avant-derni&egrave;re mission</div>
-          <p>R&eacute;cup&eacute;rer un maximum d'ADN de faune et de flore aux cot&eacute;s d'un scientifique nomm&eacute; <a class="wlink" onclick="navigate('garrius')">Garrius</a>. Ils sont rappel&eacute;s avant la fin &mdash; une autre mission les attend.</p>
+          <p>R&eacute;cup&eacute;rer un maximum d'ADN de faune et de flore aux cot&eacute;s d'un scientifique nomm&eacute; <a class="wlink" data-page="garrius">Garrius</a>. Ils sont rappel&eacute;s avant la fin &mdash; une autre mission les attend.</p>
         </div>
         <div class="card red mt-10">
           <div class="card-title">Mission finale &mdash; La Pi&egrave;ge</div>
           <p>Infiltrer le c&oelig;ur du camp ennemi et y implanter une bombe pour raser l'organisation. Le groupe avait des doutes. Ils l'accomplissent quand m&ecirc;me.</p>
-          <p class="mt-8">La bombe explose. Ce n'est pas le camp ennemi qui dispara&icirc;t &mdash; <strong>c'est la Terre enti&egrave;re</strong>. <a class="wlink" onclick="navigate('hope')">Hope Diapearlake</a> &eacute;tait un tra&icirc;tre depuis le d&eacute;but. Les Upstars ont &eacute;t&eacute; l'instrument de l'anéantissement de leur propre plan&egrave;te.</p>
+          <p class="mt-8">La bombe explose. Ce n'est pas le camp ennemi qui dispara&icirc;t &mdash; <strong>c'est la Terre enti&egrave;re</strong>. <a class="wlink" data-page="hope">Hope Diapearlake</a> &eacute;tait un tra&icirc;tre depuis le d&eacute;but. Les Upstars ont &eacute;t&eacute; l'instrument de l'anéantissement de leur propre plan&egrave;te.</p>
         </div>
       </div>
 
@@ -42,15 +40,15 @@ window.PAGES["upstars"] = `<div class="page-header">
         <div class="wiki-section-title">&#128274; Ce Qui Reste</div>
         <div class="mystery">
           <div class="mystery-icon">&#128274;</div>
-          <div class="mystery-text">Le groupe qui accompagnait <a class="wlink" onclick="navigate('garrius')">Garrius</a> lors de l'avant-derni&egrave;re mission &mdash; rappel&eacute; avant la fin &mdash; est-il le m&ecirc;me que celui de la mission finale ? Ont-ils survécu &agrave; l'explosion &agrave; bord de l'Arch ? Certains d'entre eux font-ils partie des 10 000 ?</div>
+          <div class="mystery-text">Le groupe qui accompagnait <a class="wlink" data-page="garrius">Garrius</a> lors de l'avant-derni&egrave;re mission &mdash; rappel&eacute; avant la fin &mdash; est-il le m&ecirc;me que celui de la mission finale ? Ont-ils survécu &agrave; l'explosion &agrave; bord de l'Arch ? Certains d'entre eux font-ils partie des 10 000 ?</div>
         </div>
       </div>
 
       <div class="related">
         <div class="related-title">VOIR AUSSI</div>
         <div class="related-links">
-          <a class="related-link" onclick="navigate('humains')">&#128640; Les Humains</a>
-          <a class="related-link" onclick="navigate('garrius')">&#9670; Garrius</a>
-          <a class="related-link" onclick="navigate('hope')">&#9670; Hope Diapearlake</a>
+          <a class="related-link" data-page="humains">&#128640; Les Humains</a>
+          <a class="related-link" data-page="garrius">&#9670; Garrius</a>
+          <a class="related-link" data-page="hope">&#9670; Hope Diapearlake</a>
         </div>
       </div>`;

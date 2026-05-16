@@ -1,7 +1,5 @@
 window.PAGES = window.PAGES || {};
-window.PAGES["404"] = `<div class="page-header">
-        <div class="page-breadcrumb"><a onclick="navigate('home')">Accueil</a> › Page introuvable</div>
-        <div class="page-title">Page introuvable</div>
+window.PAGES["404"] = `<div class="page-header">        <div class="page-title">Page introuvable</div>
         <div class="page-subtitle">L'ENTRÉE "{{id}}" N'EXISTE PAS ENCORE</div>
         <div class="page-tags">
           <span class="tag purple">pages/{{id}}.js manquant</span>
@@ -20,6 +18,6 @@ window.PAGES["404"] = `<div class="page-header">
       <div class="related">
         <div class="related-title">RETOURNER À</div>
         <div class="related-links">
-          <a class="related-link" onclick="navigate('home')">⌂ Accueil</a>
+          <a class="related-link" data-page="home">⌂ Accueil</a>
         </div>
       </div>`;

@@ -1,12 +1,10 @@
 window.PAGES = window.PAGES || {};
-window.PAGES["prologue"] = `<div class="page-header">
-        <div class="page-breadcrumb"><a onclick="navigate('home')">Accueil</a> › Textes Canoniques › Prologue</div>
-        <div class="page-title">Prologue — Lhandlers</div>
+window.PAGES["prologue"] = `<div class="page-header">        <div class="page-title">Prologue — Lhandlers</div>
         <div class="page-subtitle">TEXTE CANONIQUE · SPECTATEURS UNIQUEMENT</div>
         <div class="page-tags"><span class="tag gold">Connu des spectateurs uniquement</span><span class="tag gold">Ouverture de chaque histoire</span></div>
       </div>
       <div class="wiki-section">
-        <div style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text-dim);letter-spacing:3px;margin-bottom:20px;">PROLOGUE · LHANDLERS · TEXTE CANONIQUE</div>
+        <div class="canon-label mb-20">PROLOGUE · LHANDLERS · TEXTE CANONIQUE</div>
         <div class="canon-text">
           <p>N'imaginer rien…Puis soudain une explosion d'énergie. Un 
 être naquit du néant apparais, recroqueviller sur lui-même. Petit à 
@@ -38,14 +36,14 @@ immense écran. Le lieu ainsi créé se nomme Lhandlers et son créateur le
 Spectateur Suprême. Depuis lors le Spectateur Suprême surveille 
 l'infinité de mondes qu'il venait de créer.</p>
         </div>
-        <div style="text-align:right;margin-top:24px;font-family:'Cinzel Decorative',serif;font-size:13px;color:var(--glow);letter-spacing:2px;">Bienvenue dans Lhandlers , Spectateur Suprême…</div>
-        <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text-dim);letter-spacing:2px;">※ CONNU UNIQUEMENT DES SPECTATEURS · AUCUN PERSONNAGE N'A ACCÈS À CE TEXTE · APPARAÎT EN OUVERTURE DE CHAQUE HISTOIRE</div>
+        <div class="canon-sign mt-24">Bienvenue dans Lhandlers , Spectateur Suprême…</div>
+        <div class="canon-footer mt-16">※ CONNU UNIQUEMENT DES SPECTATEURS · AUCUN PERSONNAGE N'A ACCÈS À CE TEXTE · APPARAÎT EN OUVERTURE DE CHAQUE HISTOIRE</div>
       </div>
       <div class="related">
         <div class="related-title">VOIR AUSSI</div>
         <div class="related-links">
-          <a class="related-link" onclick="navigate('spectateur')">👁 Spectateur Suprême</a>
-          <a class="related-link" onclick="navigate('lhandlers')">✦ Lhandlers</a>
-          <a class="related-link" onclick="navigate('intro-elebellum')">❝ Intro Elebellum</a>
+          <a class="related-link" data-page="spectateur">👁 Spectateur Suprême</a>
+          <a class="related-link" data-page="lhandlers">✦ Lhandlers</a>
+          <a class="related-link" data-page="intro-elebellum">❝ Intro Elebellum</a>
         </div>
       </div>`;

@@ -1,7 +1,5 @@
 window.PAGES = window.PAGES || {};
-window.PAGES["bloodeater"] = `<div class="page-header">
-      <div class="page-breadcrumb"><a onclick="navigate('home')" >Accueil</a> › Espèces › Bloodeater</div>
-      <div class="page-title">Les Bloodeater</div>
+window.PAGES["bloodeater"] = `<div class="page-header">      <div class="page-title">Les Bloodeater</div>
       <div class="page-subtitle">CHAUVES-SOURIS HUMANOÏDES · CHASSEURS NOCTURNES · PRÉDATEURS DES WARGNYR</div>
       <div class="page-tags">
         <span class="tag red">Chauves-souris humanoïdes</span>
@@ -18,13 +16,13 @@ window.PAGES["bloodeater"] = `<div class="page-header">
       <div class="infobox-row"><div class="infobox-key">TERRITOIRE</div><div class="infobox-val">Archipel de Rignaras — grottes, falaises, zones élevées</div></div>
       <div class="infobox-row"><div class="infobox-key">ORGANISATION</div><div class="infobox-val">Clans — hiérarchie par la chasse</div></div>
       <div class="infobox-row"><div class="infobox-key">CAPACITÉ</div><div class="infobox-val">Parole, vol, écholocation</div></div>
-      <div class="infobox-row"><div class="infobox-key">PROIE PRINCIPALE</div><div class="infobox-val"><a class="wlink" onclick="navigate('wargnyr')">Wargnyr</a></div></div>
+      <div class="infobox-row"><div class="infobox-key">PROIE PRINCIPALE</div><div class="infobox-val"><a class="wlink" data-page="wargnyr">Wargnyr</a></div></div>
       <div class="infobox-row"><div class="infobox-key">ORIGINE</div><div class="infobox-val">Chauves-souris spatiales — évolution forcée</div></div>
       <div class="infobox-row"><div class="infobox-key">STATUT</div><div class="infobox-val">Actifs · Vaguement conscients du monde extérieur</div></div>
     </div>
 
     <div class="wiki-section">
-      <p>À l'origine, de simples <strong>chauves-souris de l'espace</strong> — prédateurs nocturnes partageant la planète <strong>Rignaras</strong> avec les loups. Comme les <a class="wlink" onclick="navigate('wargnyr')">Wargnyr</a>, ils furent exposés aux rayons de la <strong>lune artificielle de pourpalite</strong> construite par les <a class="wlink" onclick="navigate('firigilians')">Firigilians</a>, et évoluèrent en êtres humanoïdes intelligents, dotés de la parole.</p>
+      <p>À l'origine, de simples <strong>chauves-souris de l'espace</strong> — prédateurs nocturnes partageant la planète <strong>Rignaras</strong> avec les loups. Comme les <a class="wlink" data-page="wargnyr">Wargnyr</a>, ils furent exposés aux rayons de la <strong>lune artificielle de pourpalite</strong> construite par les <a class="wlink" data-page="firigilians">Firigilians</a>, et évoluèrent en êtres humanoïdes intelligents, dotés de la parole.</p>
       <p class="mt-10">Les deux espèces partagent exactement la même origine — la même expérience, la même planète fragmentée en archipel, le même ciel irradié. Mais là où les Wargnyr ont développé une culture de clan familiale et défensive, les Bloodeater ont conservé leur rôle de <strong>prédateur</strong> et l'ont complexifié. Ils ne chassent plus par instinct pur — ils chassent avec <strong>méthode, langage et solitude assumée</strong>.</p>
     </div>
 
@@ -70,9 +68,9 @@ window.PAGES["bloodeater"] = `<div class="page-header">
     <div class="related">
       <div class="related-title">VOIR AUSSI</div>
       <div class="related-links">
-        <a class="related-link" onclick="navigate('wargnyr')">🐺 Wargnyr</a>
-        <a class="related-link" onclick="navigate('firigilians')">🦑 Firigilians</a>
-        <a class="related-link" onclick="navigate('pourpalite')">◆ Pourpalite</a>
-        <a class="related-link" onclick="navigate('tunghood')">◎ Tunhgoud</a>
+        <a class="related-link" data-page="wargnyr">🐺 Wargnyr</a>
+        <a class="related-link" data-page="firigilians">🦑 Firigilians</a>
+        <a class="related-link" data-page="pourpalite">◆ Pourpalite</a>
+        <a class="related-link" data-page="tunhgoud">◎ Tunhgoud</a>
       </div>
     </div>`;

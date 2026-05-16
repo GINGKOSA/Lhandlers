@@ -1,7 +1,5 @@
 window.PAGES = window.PAGES || {};
-window.PAGES["paradeath"] = `<div class="page-header">
-      <div class="page-breadcrumb"><a onclick="navigate('home')" >Accueil</a> › Espèces › Paradeath</div>
-      <div class="page-title">Les Paradeath</div>
+window.PAGES["paradeath"] = `<div class="page-header">      <div class="page-title">Les Paradeath</div>
       <div class="page-subtitle">PARASITES INTELLIGENTS · VOLIOCE · EXPÉRIENCE FIRIGILIANS</div>
       <div class="page-tags">
         <span class="tag red">Parasites cérébraux</span>
@@ -14,7 +12,7 @@ window.PAGES["paradeath"] = `<div class="page-header">
     <div class="infobox">
       <div class="infobox-title">Paradeath</div>
       <div class="infobox-row"><div class="infobox-key">TYPE</div><div class="infobox-val">Parasite intelligent — cerveau tentaculaire</div></div>
-      <div class="infobox-row"><div class="infobox-key">TERRITOIRE</div><div class="infobox-val"><a class="wlink" onclick="navigate('volioce')">Volioce</a> — nature sauvage</div></div>
+      <div class="infobox-row"><div class="infobox-key">TERRITOIRE</div><div class="infobox-val"><a class="wlink" data-page="volioce">Volioce</a> — nature sauvage</div></div>
       <div class="infobox-row"><div class="infobox-key">ORIGINE</div><div class="infobox-val">Expérience Firigilians — échec</div></div>
       <div class="infobox-row"><div class="infobox-key">MÉCANISME</div><div class="infobox-val">Accrochage sur la nuque — contrôle total</div></div>
       <div class="infobox-row"><div class="infobox-key">POPULATION</div><div class="infobox-val">Inconnue — dispersés dans la nature</div></div>
@@ -23,7 +21,7 @@ window.PAGES["paradeath"] = `<div class="page-header">
 
     <div class="wiki-section">
       <p>Les Paradeath sont des <strong>cerveaux autonomes</strong> — des masses organiques de la taille d'une tête, dotées de petites tentacules leur permettant de se déplacer et de s'accrocher. Leur intelligence est réelle, leur instinct est simple : trouver un hôte, s'y fixer, le contrôler.</p>
-      <p class="mt-10">Ils ne sont pas nés naturellement. Ils sont le résultat d'une <strong>expérience Firigilians ratée</strong>, conçus pour être un outil de contrôle, devenus une menace incontrôlable. Aujourd'hui ils errent librement dans la nature de <a class="wlink" onclick="navigate('volioce')">Volioce</a>, sans maître, sans objectif autre que leur propre survie.</p>
+      <p class="mt-10">Ils ne sont pas nés naturellement. Ils sont le résultat d'une <strong>expérience Firigilians ratée</strong>, conçus pour être un outil de contrôle, devenus une menace incontrôlable. Aujourd'hui ils errent librement dans la nature de <a class="wlink" data-page="volioce">Volioce</a>, sans maître, sans objectif autre que leur propre survie.</p>
     </div>
 
     <div class="wiki-section">
@@ -41,7 +39,7 @@ window.PAGES["paradeath"] = `<div class="page-header">
 
     <div class="wiki-section">
       <div class="wiki-section-title">🦎 La Weaponisation Farkeyes — Second Échec</div>
-      <p>Les <a class="wlink" onclick="navigate('farkeyes')">Farkeyes</a>, en découvrant les Paradeath enfermés, ont vu une opportunité. Un parasite capable de contrôler n'importe quel être vivant — parfait pour soumettre les <a class="wlink" onclick="navigate('avaans')">Atteleck</a> et s'emparer de leur technologie. Ils ont libéré les Paradeath avec l'intention de les utiliser comme arme.</p>
+      <p>Les <a class="wlink" data-page="farkeyes">Farkeyes</a>, en découvrant les Paradeath enfermés, ont vu une opportunité. Un parasite capable de contrôler n'importe quel être vivant — parfait pour soumettre les <a class="wlink" data-page="avaans">Atteleck</a> et s'emparer de leur technologie. Ils ont libéré les Paradeath avec l'intention de les utiliser comme arme.</p>
       <p class="mt-10">Même résultat que pour les Firigilians. Les Paradeath n'obéissaient à personne. Libérés, ils ont simplement <strong>fui dans la nature de Volioce</strong> — indifférents aux plans Farkeyes, indifférents à tout sauf à leur propre survie et à la recherche d'hôtes.</p>
       <div class="card red mt-14">
         <div class="card-title">Une Chaîne d'Échecs</div>
@@ -51,7 +49,7 @@ window.PAGES["paradeath"] = `<div class="page-header">
 
     <div class="wiki-section">
       <div class="wiki-section-title">🌿 Les Paradeath Aujourd'hui</div>
-      <p>Dispersés dans la nature sauvage de l'archipel de Volioce, leur nombre exact est inconnu. Ils représentent une menace permanente et silencieuse pour toutes les espèces de Volioce — <a class="wlink" onclick="navigate('yvaanspage')">Yvaan's</a>, <a class="wlink" onclick="navigate('avaans')">Vayolis</a>, Atteleck survivants. Un Paradeath repéré à temps peut être évité ou détruit. Un Paradeath non repéré peut transformer n'importe quel individu en marionnette.</p>
+      <p>Dispersés dans la nature sauvage de l'archipel de Volioce, leur nombre exact est inconnu. Ils représentent une menace permanente et silencieuse pour toutes les espèces de Volioce — <a class="wlink" data-page="yvaanspage">Yvaan's</a>, <a class="wlink" data-page="avaans">Vayolis</a>, Atteleck survivants. Un Paradeath repéré à temps peut être évité ou détruit. Un Paradeath non repéré peut transformer n'importe quel individu en marionnette.</p>
       <div class="mystery mt-12">
         <div class="mystery-icon">⚠</div>
         <div class="mystery-text">Personne ne sait ce que vit l'hôte une fois contrôlé. Est-il conscient ? Peut-il résister ? Y a-t-il des individus qui ont survécu au détachement d'un Paradeath — et si oui, qu'ont-ils à raconter ? Ces questions restent ouvertes.</div>
@@ -61,10 +59,10 @@ window.PAGES["paradeath"] = `<div class="page-header">
     <div class="related">
       <div class="related-title">VOIR AUSSI</div>
       <div class="related-links">
-        <a class="related-link" onclick="navigate('volioce')">🌿 Volioce</a>
-        <a class="related-link" onclick="navigate('avaans')">🐱 Avaan's</a>
-        <a class="related-link" onclick="navigate('firigilians')">🦑 Firigilians</a>
-        <a class="related-link" onclick="navigate('farkeyes')">🦎 Farkeyes</a>
-        <a class="related-link" onclick="navigate('yvaanspage')">🌿 Yvaan's</a>
+        <a class="related-link" data-page="volioce">🌿 Volioce</a>
+        <a class="related-link" data-page="avaans">🐱 Avaan's</a>
+        <a class="related-link" data-page="firigilians">🦑 Firigilians</a>
+        <a class="related-link" data-page="farkeyes">🦎 Farkeyes</a>
+        <a class="related-link" data-page="yvaanspage">🌿 Yvaan's</a>
       </div>
     </div>`;

@@ -1,7 +1,5 @@
 window.PAGES = window.PAGES || {};
-window.PAGES["farkeyes"] = `<div class="page-header">
-        <div class="page-breadcrumb"><a onclick="navigate('home')">Accueil</a> › Espèces › Farkeyes</div>
-        <div class="page-title">Les Farkeyes</div>
+window.PAGES["farkeyes"] = `<div class="page-header">        <div class="page-title">Les Farkeyes</div>
         <div class="page-subtitle">LES HÉRITIERS DE LA FORCE · REPTILIENS CONQUÉRANTS · MODÈLE SPARTIATE</div>
         <div class="page-tags">
           <span class="tag red">Conquête par ego pur</span>
@@ -13,22 +11,22 @@ window.PAGES["farkeyes"] = `<div class="page-header">
       </div>
       <div class="infobox">
         <div class="infobox-title">Farkeyes</div>
-        <div class="infobox-row"><div class="infobox-key">ORIGINE</div><div class="infobox-val">Lézards mutés par la <a class="wlink" onclick="navigate('pourpalite')">pourpalite</a></div></div>
+        <div class="infobox-row"><div class="infobox-key">ORIGINE</div><div class="infobox-val">Lézards mutés par la <a class="wlink" data-page="pourpalite">pourpalite</a></div></div>
         <div class="infobox-row"><div class="infobox-key">APPARENCE</div><div class="infobox-val">Reptiliens, peau rouge</div></div>
         <div class="infobox-row"><div class="infobox-key">TERRITOIRE</div><div class="infobox-val">Farkaras (empire, tous les conquis)</div></div>
         <div class="infobox-row"><div class="infobox-key">CAPITALE</div><div class="infobox-val">Drakarnias (île volcanique flottante, ex-Scioprius)</div></div>
         <div class="infobox-row"><div class="infobox-key">DEMONITE</div><div class="infobox-val">Compatible si cicatrice(s)</div></div>
-        <div class="infobox-row"><div class="infobox-key">CHEF</div><div class="infobox-val"><a class="wlink" onclick="navigate('jarlarkeyes')">Jarlarkeyes</a></div></div>
-        <div class="infobox-row"><div class="infobox-key">MODÈLE IDÉ.</div><div class="infobox-val">Spartiates <em style="font-size:11px;color:var(--text-dim)">(référence spectateur)</em></div></div>
+        <div class="infobox-row"><div class="infobox-key">CHEF</div><div class="infobox-val"><a class="wlink" data-page="jarlarkeyes">Jarlarkeyes</a></div></div>
+        <div class="infobox-row"><div class="infobox-key">MODÈLE IDÉ.</div><div class="infobox-val">Spartiates <em class="infobox-note">(référence spectateur)</em></div></div>
       </div>
 
       <div class="wiki-section">
-        <p>Au commencement, de simples petits lézards vivant tranquillement sur la planète <strong>Scioprius</strong> — monde natal des <a class="wlink" onclick="navigate('firigilians')">Firigilians</a>, dont l'empire s'étendait sur l'univers entier. Lors des guerres pour s'accaparer la <a class="wlink" onclick="navigate('pourpalite')">pourpalite</a>, ces lézards furent massivement exposés à l'énergie du cristal et <strong>mutèrent</strong>. Ce fut le début de tout.</p>
+        <p>Au commencement, de simples petits lézards vivant tranquillement sur la planète <strong>Scioprius</strong> — monde natal des <a class="wlink" data-page="firigilians">Firigilians</a>, dont l'empire s'étendait sur l'univers entier. Lors des guerres pour s'accaparer la <a class="wlink" data-page="pourpalite">pourpalite</a>, ces lézards furent massivement exposés à l'énergie du cristal et <strong>mutèrent</strong>. Ce fut le début de tout.</p>
       </div>
 
       <div class="wiki-section">
         <div class="wiki-section-title">🧬 La Mutation &amp; l'Exploitation</div>
-        <p>Les <a class="wlink" onclick="navigate('firigilians')">Firigilians</a> découvrirent par accident que le sang de ces lézards mutés mélangé à la pourpalite épuisée la <strong>rechargeait indéfiniment</strong>. Sans remords, ils industrialisèrent l'exploitation. Les Farkeyes furent réduits à du <strong>bétail énergétique</strong> — massacrés par milliers pour produire de la <a class="wlink" onclick="navigate('demonite')">Demonite</a>.</p>
+        <p>Les <a class="wlink" data-page="firigilians">Firigilians</a> découvrirent par accident que le sang de ces lézards mutés mélangé à la pourpalite épuisée la <strong>rechargeait indéfiniment</strong>. Sans remords, ils industrialisèrent l'exploitation. Les Farkeyes furent réduits à du <strong>bétail énergétique</strong> — massacrés par milliers pour produire de la <a class="wlink" data-page="demonite">Demonite</a>.</p>
         <p class="mt-10">La peau rouge des Farkeyes est 
 l'héritage direct de cette mutation initiale — l'énergie de la 
 pourpalite a littéralement changé leur biologie. Leur résistance à la 
@@ -55,7 +53,7 @@ n'est pas un don — c'est la trace permanente de ce qu'on leur a fait.</p>
         </div>
         <div class="card red">
           <div class="card-title">Pas d'armée. Pas de police. Pas de structure.</div>
-          <p>La société Farkeyes n'a <strong>aucune institution commune</strong> en dehors du palais de <a class="wlink" onclick="navigate('jarlarkeyes')">Jarlarkeyes</a>. Pas d'armée permanente, pas de police, pas de service public d'aucune sorte. Chacun se débrouille seul — pour manger, pour se loger, pour survivre. C'est la <strong>totale démerde</strong>, assumée et valorisée.</p>
+          <p>La société Farkeyes n'a <strong>aucune institution commune</strong> en dehors du palais de <a class="wlink" data-page="jarlarkeyes">Jarlarkeyes</a>. Pas d'armée permanente, pas de police, pas de service public d'aucune sorte. Chacun se débrouille seul — pour manger, pour se loger, pour survivre. C'est la <strong>totale démerde</strong>, assumée et valorisée.</p>
           <p class="mt-8">La seule structure qui existe, c'est la hiérarchie des cicatrices — et encore, elle ne crée aucune obligation d'obéissance au quotidien. Un haut rang impose le respect, pas le service.</p>
         </div>
         <div class="card red">
@@ -65,19 +63,19 @@ n'est pas un don — c'est la trace permanente de ce qu'on leur a fait.</p>
         </div>
         <div class="card red">
           <div class="card-title">La Conquête Symbolique</div>
-          <p>Ils sont la seule espèce à vouloir conquérir Tunhgoud — non par besoin de terres ou de ressources. L'espace dans le disque est quasi-infini. La conquête est <strong>purement symbolique</strong> : affirmer être les plus forts. On ne peut pas négocier avec <a class="wlink" onclick="navigate('jarlarkeyes')">Jarlarkeyes</a> — il ne veut rien de concret. Il n'y a rien à lui offrir pour qu'il s'arrête.</p>
+          <p>Ils sont la seule espèce à vouloir conquérir Tunhgoud — non par besoin de terres ou de ressources. L'espace dans le disque est quasi-infini. La conquête est <strong>purement symbolique</strong> : affirmer être les plus forts. On ne peut pas négocier avec <a class="wlink" data-page="jarlarkeyes">Jarlarkeyes</a> — il ne veut rien de concret. Il n'y a rien à lui offrir pour qu'il s'arrête.</p>
         </div>
       </div>
 
       <div class="wiki-section">
         <div class="wiki-section-title">🔴 Omega — Le Tresantes</div>
-        <p>Dans la société Farkeyes, un guerrier qui rejoint le camp adverse devient un <em>tresantes</em> — un sans-statut, une honte vivante. <a class="wlink" onclick="navigate('omega')">Omega</a>, fils de <a class="wlink" onclick="navigate('jarlarkeyes')">Jarlarkeyes</a>, porte trois cicatrices — il a prouvé sa valeur martiale en battant un Général. Mais son passage dans le camp humain est perçu comme <strong>pire que la lâcheté</strong>.</p>
+        <p>Dans la société Farkeyes, un guerrier qui rejoint le camp adverse devient un <em>tresantes</em> — un sans-statut, une honte vivante. <a class="wlink" data-page="omega">Omega</a>, fils de <a class="wlink" data-page="jarlarkeyes">Jarlarkeyes</a>, porte trois cicatrices — il a prouvé sa valeur martiale en battant un Général. Mais son passage dans le camp humain est perçu comme <strong>pire que la lâcheté</strong>.</p>
         <p class="mt-10">Ce que les Farkeyes ne savent pas : ce n'est pas Omega qui a trahi par conviction. C'est Jarlarkeyes lui-même qui l'a envoyé en <strong>commando suicide</strong> contre les humains lors de la première guerre Humain-Farkeyes. En apprenant la nature réelle de sa mission, Omega et sa troupe se sont <strong>mutinés</strong> et ont rejoint les humains. Élu Farkeyes confirmé, il leur a apporté un traducteur Firigilians permettant de communiquer avec toutes les espèces du disque. La trahison, au fond, avait commencé du côté du père.</p>
       </div>
 
       <div class="wiki-section">
         <div class="wiki-section-title">◆ Particularité Biologique — Demonite</div>
-        <p>La compatibilité avec la <a class="wlink" onclick="navigate('demonite')">Demonite</a> est <strong>inscrite dans leur ADN</strong>
+        <p>La compatibilité avec la <a class="wlink" data-page="demonite">Demonite</a> est <strong>inscrite dans leur ADN</strong>
  depuis la mutation originelle — la Demonite est faite de leur sang, 
 elle leur appartient biologiquement. Mais cette compatibilité n'est pas 
 universelle au sein de l'espèce : <strong>seuls les Farkeyes portant au moins une cicatrice</strong> peuvent activer des pouvoirs. Un Farkeyes sans cicatrice qui touche de la Demonite n'obtiendra rien. <strong>Le rang biologique est la condition d'accès au pouvoir.</strong></p>
@@ -99,7 +97,7 @@ universelle au sein de l'espèce : <strong>seuls les Farkeyes portant au moins u
         <div class="card red mt-14">
           <div class="card-title">Mécanique du Transfert de Rang</div>
           <p>Quand deux porteurs de cicatrices s'affrontent, le vainqueur prend le rang du vaincu et vice versa — <strong>échange exact et symétrique</strong>. Un Officier (1 cicatrice) bat un Général (3 cicatrices) : l'Officier passe à trois, le Général tombe à une. Le corps enregistre l'échange instantanément, sans appel.</p>
-          <p class="mt-8">Quand un Farkeyes sans cicatrice bat un porteur, il obtient <strong>le rang du vaincu</strong>. Le vaincu tombe à <strong>0 cicatrice</strong> — sauf s'il avait déjà activé ses pouvoirs via la <a class="wlink" onclick="navigate('demonite')">Demonite</a> : dans ce cas, le lien biologique avec la Demonite lui garantit un plancher d'<strong>une cicatrice</strong>, quelles que soient les défaites.</p>
+          <p class="mt-8">Quand un Farkeyes sans cicatrice bat un porteur, il obtient <strong>le rang du vaincu</strong>. Le vaincu tombe à <strong>0 cicatrice</strong> — sauf s'il avait déjà activé ses pouvoirs via la <a class="wlink" data-page="demonite">Demonite</a> : dans ce cas, le lien biologique avec la Demonite lui garantit un plancher d'<strong>une cicatrice</strong>, quelles que soient les défaites.</p>
           <p class="mt-8">Le nombre de porteurs par rang n'est jamais connu avec précision — la pyramide est fluide, auto-régulée. Il n'existe aucun registre : les cicatrices sur les yeux <em>sont</em> le registre.</p>
         </div>
 
@@ -120,7 +118,7 @@ universelle au sein de l'espèce : <strong>seuls les Farkeyes portant au moins u
           <p class="p-note">Naître sans cicatrice dans une famille qui en a : discrimination. Naître avec dans une famille sans : méfiance. Le hasard biologique contredit en permanence l'idéologie du mérite.</p>
           <div class="mystery mt-12">
             <div class="mystery-icon">⚠</div>
-            <div class="mystery-text">Ce phénomène n'est pas totalement aléatoire — la <strong>lignée de <a class="wlink" onclick="navigate('jarlarkeyes')">Jarlarkeyes</a></strong> et les familles proches du pouvoir naissent statistiquement avec plus de cicatrices. Une aristocratie biologique de fait, dans une idéologie qui nie toute noblesse de sang. La contradiction est connue de tous — et personne ne la dit à voix haute.</div>
+            <div class="mystery-text">Ce phénomène n'est pas totalement aléatoire — la <strong>lignée de <a class="wlink" data-page="jarlarkeyes">Jarlarkeyes</a></strong> et les familles proches du pouvoir naissent statistiquement avec plus de cicatrices. Une aristocratie biologique de fait, dans une idéologie qui nie toute noblesse de sang. La contradiction est connue de tous — et personne ne la dit à voix haute.</div>
           </div>
         </div>
       </div>
@@ -128,11 +126,11 @@ universelle au sein de l'espèce : <strong>seuls les Farkeyes portant au moins u
       <div class="related">
         <div class="related-title">VOIR AUSSI</div>
         <div class="related-links">
-          <a class="related-link" onclick="navigate('jarlarkeyes')">◈ Jarlarkeyes</a>
-          <a class="related-link" onclick="navigate('omega')">Ω Omega</a>
-          <a class="related-link" onclick="navigate('demonite')">◆ Demonite</a>
-          <a class="related-link" onclick="navigate('pourpalite')">◆ Pourpalite</a>
-          <a class="related-link" onclick="navigate('firigilians')">🦑 Firigilians</a>
-          <a class="related-link" onclick="navigate('avaans')">🐱 Avaan's</a>
+          <a class="related-link" data-page="jarlarkeyes">◈ Jarlarkeyes</a>
+          <a class="related-link" data-page="omega">Ω Omega</a>
+          <a class="related-link" data-page="demonite">◆ Demonite</a>
+          <a class="related-link" data-page="pourpalite">◆ Pourpalite</a>
+          <a class="related-link" data-page="firigilians">🦑 Firigilians</a>
+          <a class="related-link" data-page="avaans">🐱 Avaan's</a>
         </div>
       </div>`;
