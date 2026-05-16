@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   LHANDLERS WIKI — wiki.js  v1.2
+   LHANDLERS WIKI — wiki.js  v1.5
    Logique pure — ne jamais modifier ce fichier pour ajouter
    une page. Tout passe par registry.js.
 
@@ -34,6 +34,23 @@
    - renderSearch : suppression du querySelectorAll + addEventListener sur les cartes
                     de résultats — la délégation sur #page-container suffit et évitait
                     un double appel navigate() (double history.pushState silencieux)
+
+   Corrections v1.4 :
+   - buildSidebar : remplacement des addEventListener individuels sur .sidebar-link
+                    par une délégation unique sur nav — cohérent avec #page-container
+   - renderSearch : scoring summary à 0.5 — distingue un hit summary (0.5) d'un hit
+                    keyword pur (1) ; keyword > summary, titre partiel (2) > les deux
+
+   Corrections v1.5 :
+   - navigate     : guard currentPage === pageId — évite le double pushState sur clic répété
+   - SEARCH_INDEX : split /[\s\-]+/ — les mots composés (ex: "chauves-souris") sont indexés
+                    en sous-mots, "chauves" trouve maintenant "chauves-souris"
+   - renderSearch : query aussi splittée sur /[\s\-]+/ — "chauves-souris" cherche "chauves"
+                    ET "souris" séparément dans l'index, les deux fonctionnent
+   - liveSearch   : query vide → navigate('home') au lieu de rester sur search vide
+   - renderSearch : ajout classe .search-active sur container — désactive le fadeIn pendant
+                    la frappe (supprime le clignotement à chaque caractère)
+   - renderContent: retire .search-active → fadeIn réactivé pour les vraies pages
    ═══════════════════════════════════════════════════════════════ */
 
 // ── INIT ──────────────────────────────────────────────────────────
@@ -63,7 +80,7 @@ var SEARCH_INDEX = (function() {
   var idx = {};
   window.REGISTRY.forEach(function(entry) {
     var words = (entry.title + ' ' + entry.keywords + ' ' + (entry.summary || ''))
-                  .toLowerCase().split(/\s+/);
+                  .toLowerCase().split(/[\s\-]+/);
     words.forEach(function(w) {
       if (w.length < 2) return; // ignorer les mots d'un seul caractère
       if (!idx[w]) idx[w] = [];
@@ -212,12 +229,15 @@ function highlightMatch(str, query) {
 
   nav.innerHTML = html;
 
-  // Attacher les événements après injection du HTML (évite les onclick inline)
-  nav.querySelectorAll('.sidebar-link[data-page]').forEach(function(el) {
-    el.addEventListener('click', function() { navigate(el.dataset.page); });
-  });
-  nav.querySelectorAll('.sidebar-group-title.collapsible').forEach(function(el) {
-    el.addEventListener('click', function(e) { toggleGroup(el, e); });
+  // Délégation unique sur nav — cohérent avec la délégation de #page-container.
+  // Évite N listeners individuels recréés à chaque buildSidebar.
+  nav.addEventListener('click', function(e) {
+    // Liens de navigation
+    var link = e.target.closest('.sidebar-link[data-page]');
+    if (link) { navigate(link.dataset.page); return; }
+    // Titres de groupe repliables
+    var title = e.target.closest('.sidebar-group-title.collapsible');
+    if (title) { toggleGroup(title, e); }
   });
 })();
 
@@ -264,6 +284,7 @@ function loadScript(pageId, callback) {
 // ── ROUTER ────────────────────────────────────────────────────────
 function navigate(pageId) {
   if (!pageId) pageId = 'home';
+  if (currentPage === pageId) { closeSidebar(); return; } // évite le double pushState
   history.pushState({ page: pageId }, '', '#' + pageId);
   closeSidebar();   // ferme la sidebar mobile après chaque navigation
   loadPage(pageId);
@@ -359,6 +380,7 @@ function renderContent(pageId, html, entry) {
     }
   }
 
+  container.classList.remove('search-active'); // réactive fadeIn pour les vraies pages
   container.innerHTML = '';  // vider le container
   container.appendChild(tmp); // déplacer tmp directement — pas de re-parsing
   container.scrollTop = 0;
@@ -387,7 +409,8 @@ function liveSearch(query) {
     }
     renderSearch(query);
   } else if (currentPage === 'search') {
-    renderSearch('');
+    // Query vidée → retour home (pas de page "0 résultats" inutile)
+    navigate('home');
   }
 }
 
@@ -396,19 +419,28 @@ function renderSearch(query) {
   var ql = (query || '').toLowerCase().trim();
 
   // ── Recherche via index inversé + scoring de pertinence ──
-  // Score : 3 = correspondance exacte sur le titre
-  //         2 = le titre contient la query
-  //         1 = correspondance sur keywords / summary
+  // Score : 3   = correspondance exacte sur le titre
+  //         2   = le titre contient la query
+  //         1   = correspondance sur un keyword
+  //         0.5 = correspondance sur le summary uniquement
   var results = [];
   if (ql.length >= 1) {
     var scoreMap = {};
-    Object.keys(SEARCH_INDEX).forEach(function(key) {
-      if (key.indexOf(ql) !== -1) {
-        SEARCH_INDEX[key].forEach(function(id) {
-          if (!scoreMap[id]) scoreMap[id] = 0;
-          scoreMap[id] = Math.max(scoreMap[id], 1);
-        });
-      }
+    // Splitter la query sur les tirets — "chauves-souris" → ["chauves", "souris"]
+    var queryTokens = ql.split(/[\s\-]+/).filter(function(t) { return t.length >= 1; });
+    queryTokens.forEach(function(token) {
+      Object.keys(SEARCH_INDEX).forEach(function(key) {
+        if (key.indexOf(token) !== -1) {
+          SEARCH_INDEX[key].forEach(function(id) {
+            var entry = REGISTRY_MAP[id];
+            if (!entry) return;
+            var inKeywords = (entry.title + ' ' + entry.keywords).toLowerCase().indexOf(key) !== -1;
+            var baseScore  = inKeywords ? 1 : 0.5;
+            if (!scoreMap[id]) scoreMap[id] = 0;
+            scoreMap[id] = Math.max(scoreMap[id], baseScore);
+          });
+        }
+      });
     });
     // Bonus titre : surclasse un simple hit keyword
     // Lookup O(1) via REGISTRY_MAP — pas de second forEach sur tout le registry
@@ -454,6 +486,7 @@ function renderSearch(query) {
   // (définie une seule fois en bas de wiki.js) gère tous les [data-page] injectés.
   // Ajouter des listeners ici créait un double-déclenchement (navigate appelé 2×).
 
+  container.classList.add('search-active');   // désactive fadeIn pendant la frappe
   container.innerHTML = '';
   container.appendChild(tmp);
   container.scrollTop = 0;

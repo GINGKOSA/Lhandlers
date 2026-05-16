@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   LHANDLERS WIKI — wiki.css  v1.1
+   LHANDLERS WIKI — wiki.css  v1.2
    Source unique de vérité pour tous les styles
 
    Corrections v0.8 :
@@ -14,6 +14,10 @@
    - .mechanic-block, .mechanic-block-label documentés
    - .mini-grid, .mini-grid-card, .mini-grid-card-label documentés
    - .p-note documenté
+
+   Corrections v1.2 :
+   - #page-container.search-active > * { animation: none } — supprime le fadeIn
+     pendant la recherche live (plus de clignotement à chaque frappe)
    ═══════════════════════════════════════════════════════════════ */
 
 /* ── VARIABLES ── */
@@ -269,6 +273,9 @@ body {
 .main::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
 #page-container { padding: 40px 48px 80px 40px; }
+
+/* Désactive le fadeIn pendant la recherche live — évite le clignotement à chaque frappe */
+#page-container.search-active > * { animation: none; }
 
 @keyframes fadeIn {
   from{ opacity:0; transform:translateY(10px); }
