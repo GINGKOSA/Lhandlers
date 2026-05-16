@@ -375,6 +375,7 @@ body {
 /* ── INFOBOX ── */
 .infobox {
   float: right;
+  clear: right;
   width: 240px;
   margin: 0 0 20px 24px;
   background: var(--surface);
@@ -382,6 +383,11 @@ body {
   border-radius: 10px;
   overflow: hidden;
   font-size: 13px;
+}
+
+/* Remonte l'infobox tout en haut, alignée avec le titre */
+.page-header + .infobox {
+  margin-top: -220px;
 }
 .infobox-title {
   background: var(--glow-soft);
@@ -599,6 +605,7 @@ strong { color: var(--text-bright); font-weight: 600; }
   .main { margin-left: 0; }
   #page-container { padding: 24px 20px 60px; }
   .infobox { float: none; width: 100%; margin: 0 0 20px 0; }
+  .page-header + .infobox { margin-top: 0; }
   .page-title { font-size: clamp(18px,5vw,26px); }
   .home-grid { grid-template-columns: 1fr 1fr; }
 }
