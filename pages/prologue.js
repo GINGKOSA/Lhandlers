@@ -1,4 +1,3 @@
-window.PAGES = window.PAGES || {};
 window.PAGES["prologue"] = `<div class="page-header">        <div class="page-title">Prologue — Lhandlers</div>
         <div class="page-subtitle">TEXTE CANONIQUE · SPECTATEURS UNIQUEMENT</div>
         <div class="page-tags"><span class="tag gold">Connu des spectateurs uniquement</span><span class="tag gold">Ouverture de chaque histoire</span></div>

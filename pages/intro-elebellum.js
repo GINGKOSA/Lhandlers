@@ -1,4 +1,3 @@
-window.PAGES = window.PAGES || {};
 window.PAGES["intro-elebellum"] = `<div class="page-header">        <div class="page-title">Introduction — Elebellum</div>
         <div class="page-subtitle">TEXTE CANONIQUE · SPECTATEURS UNIQUEMENT</div>
         <div class="page-tags"><span class="tag purple">Connu des spectateurs uniquement</span></div>

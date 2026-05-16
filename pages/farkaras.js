@@ -1,4 +1,3 @@
-window.PAGES = window.PAGES || {};
 window.PAGES["farkaras"] = `<div class="page-header">        <div class="page-title">Farkaras</div>
         <div class="page-subtitle">EMPIRE FARKEYES · TOUS LES TERRITOIRES CONQUIS</div>
         <div class="page-tags">

@@ -1,4 +1,3 @@
-window.PAGES = window.PAGES || {};
 window.PAGES["giatyr"] = `<div class="page-header">        <div class="page-title">Giatyr</div>
         <div class="page-subtitle">FORCE DU BIEN · DIEU DE LA CRÉATION</div>
         <div class="page-tags">

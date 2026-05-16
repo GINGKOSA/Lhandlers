@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   LHANDLERS WIKI — registry.js  v0.8
+   LHANDLERS WIKI — registry.js  v1.1
    Pour ajouter une page :
      1. Créer pages/mon-id.js  (avec window.PAGES["mon-id"] = `...`)
      2. Ajouter une ligne ici

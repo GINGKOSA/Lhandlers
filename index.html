@@ -4,7 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lhandlers Wiki</title>
+
+<!-- Open Graph — mis à jour dynamiquement par wiki.js dans loadPage() -->
+<meta property="og:site_name"   content="Lhandlers Wiki">
+<meta property="og:type"        content="website">
+<meta property="og:title"       id="og-title"       content="Lhandlers Wiki — Elebellum">
+<meta property="og:description" id="og-description" content="Encyclopédie de l'univers Elebellum — science-fantasy.">
+<meta property="og:url"         id="og-url"         content="">
+<meta name="description"        id="meta-desc"      content="Encyclopédie de l'univers Elebellum — science-fantasy.">
+
+<!-- Preload Crimson Pro (police de corps) pour éviter le FOUT -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Share+Tech+Mono&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23080810'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='%23c8a96e'>✦</text></svg>">
 <link rel="stylesheet" href="wiki.css">
 </head>
 <body>
@@ -21,7 +34,7 @@
   <input class="topbar-search" type="text" placeholder="Rechercher dans le wiki..." id="searchInput" aria-label="Rechercher">
   <div class="topbar-right">
     <div class="status-dot"></div>
-    ELEBELLUM · v0.8
+    ELEBELLUM · v1.3
   </div>
 </div>
 
@@ -41,7 +54,7 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     ARCHITECTURE v0.8
+     ARCHITECTURE v1.0
      - registry.js  : source unique de vérité (pages + sidebar + icônes)
      - wiki.js      : logique pure — sidebar auto-générée, lazy loading réel
      - pages/*.js   : contenu (un fichier par page, chargé à la demande)
@@ -53,6 +66,7 @@
      ═══════════════════════════════════════════════════════════════ -->
 <script src="registry.js"></script>
 <script src="wiki.js"></script>
+<noscript><div style="padding:40px;text-align:center;font-family:Georgia,serif;color:#d4cfc4;background:#080810">Ce wiki nécessite JavaScript pour fonctionner.</div></noscript>
 
 </body>
 </html>

@@ -1,4 +1,3 @@
-window.PAGES = window.PAGES || {};
 window.PAGES["demonite"] = `<div class="page-header">        <div class="page-title">La Demonite</div>
         <div class="page-subtitle">CRISTAL BORDEAUX · SANG FARKEYES CRISTALLISÉ · SOURCE DE POUVOIRS</div>
         <div class="page-tags">

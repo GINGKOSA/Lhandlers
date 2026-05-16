@@ -1,4 +1,3 @@
-window.PAGES = window.PAGES || {};
 window.PAGES["chronologie"] = `<div class="page-header">        <div class="page-title">Chronologie</div>
         <div class="page-subtitle">POINT ZÉRO — AN 0 — ARRIVÉE DES HUMAINS</div>
       </div>
@@ -6,7 +5,7 @@ window.PAGES["chronologie"] = `<div class="page-header">        <div class="page
         <div class="hierarchy">
           <div class="rank gold">
             <div class="rank-eyes brown">AVANT AN 0</div>
-            <div class="rank-label">Histoire ancienne — Les <a class="wlink" data-page="firigilians">Firigilians</a>, création de <a class="wlink" data-page="tunhgood">Tunhgoud</a>, chute des <a class="wlink" data-page="avaans">Atteleck</a>, destruction de la Terre</div>
+            <div class="rank-label">Histoire ancienne — Les <a class="wlink" data-page="firigilians">Firigilians</a>, création de <a class="wlink" data-page="tunhgoud">Tunhgoud</a>, chute des <a class="wlink" data-page="avaans">Atteleck</a>, destruction de la Terre</div>
           </div>
           <div class="rank active">
             <div class="rank-eyes brown">AN 0</div>

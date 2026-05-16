@@ -1,11 +1,19 @@
 /* ═══════════════════════════════════════════════════════════════
-   LHANDLERS WIKI — wiki.css  v0.8
+   LHANDLERS WIKI — wiki.css  v1.1
    Source unique de vérité pour tous les styles
 
    Corrections v0.8 :
    - body::before supprimé → <canvas id="starfield"> (zéro coût scroll)
    - .sidebar-link:focus-visible ajouté (accessibilité clavier)
    - .search-result-summary ajouté (champ summary du registry)
+
+   Corrections v0.9 :
+   - .mb ajouté (margin-bottom: 16px) — utilisé dans mysteres.js
+   - .mystery, .mystery-icon, .mystery-text documentés
+   - .hierarchy, .rank, .rank-eyes, .rank-label, .rank-note documentés
+   - .mechanic-block, .mechanic-block-label documentés
+   - .mini-grid, .mini-grid-card, .mini-grid-card-label documentés
+   - .p-note documenté
    ═══════════════════════════════════════════════════════════════ */
 
 /* ── VARIABLES ── */
@@ -521,6 +529,7 @@ strong { color: var(--text-bright); font-weight: 600; }
 .mt-16 { margin-top: 16px; }
 .mt-20 { margin-top: 20px; }
 .mt-24 { margin-top: 24px; }
+.mb    { margin-bottom: 16px; }
 .mb-10 { margin-bottom: 10px; }
 .mb-20 { margin-bottom: 20px; }
 

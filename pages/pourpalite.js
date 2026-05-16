@@ -1,4 +1,3 @@
-window.PAGES = window.PAGES || {};
 window.PAGES["pourpalite"] = `<div class="page-header">        <div class="page-title">La Pourpalite</div>
         <div class="page-subtitle">CRISTAL VIOLET · ORIGINE DE TOUT · MOTEUR DE L'HISTOIRE</div>
         <div class="page-tags">

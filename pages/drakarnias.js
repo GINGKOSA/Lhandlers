@@ -1,4 +1,3 @@
-window.PAGES = window.PAGES || {};
 window.PAGES["drakarnias"] = `<div class="page-header">        <div class="page-title">Drakarnias</div>
         <div class="page-subtitle">CAPITALE DE FARKARAS · BÂTIE SUR LES RUINES DE SCIOPRIUS</div>
         <div class="page-tags">

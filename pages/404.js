@@ -1,4 +1,3 @@
-window.PAGES = window.PAGES || {};
 window.PAGES["404"] = `<div class="page-header">        <div class="page-title">Page introuvable</div>
         <div class="page-subtitle">L'ENTRÉE "{{id}}" N'EXISTE PAS ENCORE</div>
         <div class="page-tags">

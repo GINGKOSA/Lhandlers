@@ -1,37 +1,36 @@
-window.PAGES = window.PAGES || {};
 window.PAGES["hope"] = `<div class="page-header">        <div class="page-title">Hope Diapearlake</div>
-        <div class="page-subtitle">PR&Eacute;SIDENT DES NATIONS UNIES &middot; TRA&Icirc;TRE &middot; RESPONSABLE DE LA FIN DE LA TERRE</div>
+        <div class="page-subtitle">PRÉSIDENT DES NATIONS UNIES · TRAÎTRE · RESPONSABLE DE LA FIN DE LA TERRE</div>
         <div class="page-tags">
-          <span class="tag red">Tra&icirc;tre</span>
+          <span class="tag red">Traître</span>
           <span class="tag red">Responsable de la destruction de la Terre</span>
-          <span class="tag red">Infiltr&eacute; depuis le d&eacute;but</span>
+          <span class="tag red">Infiltré depuis le début</span>
         </div>
       </div>
 
       <div class="infobox">
         <div class="infobox-title">Hope Diapearlake</div>
-        <div class="infobox-row"><div class="infobox-key">ESP&Egrave;CE</div><div class="infobox-val"><a class="wlink" data-page="humains">Humain</a></div></div>
-        <div class="infobox-row"><div class="infobox-key">R&Ocirc;LE OFFICIEL</div><div class="infobox-val">Pr&eacute;sident des Nations Unies</div></div>
-        <div class="infobox-row"><div class="infobox-key">R&Ocirc;LE R&Eacute;EL</div><div class="infobox-val">Tra&icirc;tre infiltr&eacute;</div></div>
+        <div class="infobox-row"><div class="infobox-key">ESPÈCE</div><div class="infobox-val"><a class="wlink" data-page="humains">Humain</a></div></div>
+        <div class="infobox-row"><div class="infobox-key">RÔLE OFFICIEL</div><div class="infobox-val">Président des Nations Unies</div></div>
+        <div class="infobox-row"><div class="infobox-key">RÔLE RÉEL</div><div class="infobox-val">Traître infiltré</div></div>
         <div class="infobox-row"><div class="infobox-key">RESPONSABLE DE</div><div class="infobox-val">Destruction de la Terre</div></div>
-        <div class="infobox-row"><div class="infobox-key">STATUT</div><div class="infobox-val">Inconnu apr&egrave;s l'explosion</div></div>
+        <div class="infobox-row"><div class="infobox-key">STATUT</div><div class="infobox-val">Inconnu après l'explosion</div></div>
       </div>
 
       <div class="wiki-section">
-        <p>Le pr&eacute;sident des <strong>Nations Unies</strong> &mdash; &eacute;lu, l&eacute;gitime, respecté. Et tra&icirc;tre depuis le d&eacute;but.</p>
-        <p class="mt-10">C'est lui qui a envoy&eacute; les <a class="wlink" data-page="upstars">Upstars</a> en mission finale : infiltrer le c&oelig;ur du camp ennemi et y implanter une bombe pour raser l'organisation terroriste. La bombe a explos&eacute;. Mais ce n'est pas le camp ennemi qui a disparu &mdash; <strong>c'est la Terre enti&egrave;re</strong>.</p>
+        <p>Le président des <strong>Nations Unies</strong> — élu, légitime, respecté. Et traître depuis le début.</p>
+        <p class="mt-10">C'est lui qui a envoyé les <a class="wlink" data-page="upstars">Upstars</a> en mission finale : infiltrer le cœur du camp ennemi et y implanter une bombe pour raser l'organisation terroriste. La bombe a explosé. Mais ce n'est pas le camp ennemi qui a disparu — <strong>c'est la Terre entière</strong>.</p>
       </div>
 
       <div class="wiki-section">
         <div class="wiki-section-title">&#9760; La Trahison</div>
         <div class="card red">
-          <div class="card-title">Un Si&egrave;cle d'Infiltration</div>
-          <p>Hope Diapearlake &eacute;tait un tra&icirc;tre <strong>depuis le d&eacute;but</strong>. Son acc&egrave;s &agrave; la pr&eacute;sidence des Nations Unies &mdash; la seule institution capable de coordonner une r&eacute;ponse &agrave; la menace &mdash; n'&eacute;tait pas un accident. L'organisation fantôme qui avait pass&eacute; plus d'un si&egrave;cle &agrave; se pr&eacute;parer dans l'ombre avait plac&eacute; ses pi&egrave;ces bien avant de sortir de l'obscurit&eacute;.</p>
+          <div class="card-title">Un Siècle d'Infiltration</div>
+          <p>Hope Diapearlake était un traître <strong>depuis le début</strong>. Son accès à la présidence des Nations Unies — la seule institution capable de coordonner une réponse à la menace — n'était pas un accident. L'organisation fantôme qui avait passé plus d'un siècle à se préparer dans l'ombre avait placé ses pièces bien avant de sortir de l'obscurité.</p>
         </div>
         <div class="card red mt-10">
-          <div class="card-title">La Mission &mdash; Ce Qu'elle &Eacute;tait Vraiment</div>
-          <p>Les <a class="wlink" data-page="upstars">Upstars</a> croyaient anéantir l'ennemi. La mission n'&eacute;tait pas d'an&eacute;antir l'ennemi. Elle &eacute;tait d'an&eacute;antir <strong>tout le monde</strong>. Y compris les Nations Unies. Y compris ses propres alliés. Y compris la Terre elle-même.</p>
-          <p class="mt-8">Le groupe avait des doutes. Ils ont ex&eacute;cut&eacute; quand m&ecirc;me.</p>
+          <div class="card-title">La Mission — Ce Qu'elle Était Vraiment</div>
+          <p>Les <a class="wlink" data-page="upstars">Upstars</a> croyaient anéantir l'ennemi. La mission n'était pas d'anéantir l'ennemi. Elle était d'anéantir <strong>tout le monde</strong>. Y compris les Nations Unies. Y compris ses propres alliés. Y compris la Terre elle-même.</p>
+          <p class="mt-8">Le groupe avait des doutes. Ils ont exécuté quand même.</p>
         </div>
       </div>
 
@@ -39,11 +38,11 @@ window.PAGES["hope"] = `<div class="page-header">        <div class="page-title"
         <div class="wiki-section-title">&#128274; Questions Ouvertes</div>
         <div class="mystery">
           <div class="mystery-icon">&#128274;</div>
-          <div class="mystery-text"><strong>A-t-il survécu ?</strong> &mdash; L'explosion a d&eacute;truit la Terre. &Eacute;tait-il sur Terre &agrave; ce moment ? Avait-il pr&eacute;vu une &eacute;chappat&ocirc;ire ? Si l'organisation &eacute;tait suffisamment organis&eacute;e pour infiltrer la pr&eacute;sidence mondiale pendant un si&egrave;cle, avait-elle pr&eacute;vu une fa&ccedil;on de survivre &agrave; la fin ?</div>
+          <div class="mystery-text"><strong>A-t-il survécu ?</strong> — L'explosion a détruit la Terre. Était-il sur Terre à ce moment ? Avait-il prévu une échappatôire ? Si l'organisation était suffisamment organisée pour infiltrer la présidence mondiale pendant un siècle, avait-elle prévu une façon de survivre à la fin ?</div>
         </div>
         <div class="mystery mt-10">
           <div class="mystery-icon">&#128274;</div>
-          <div class="mystery-text"><strong>Quel &eacute;tait le but ?</strong> &mdash; Pourquoi d&eacute;truire la Terre enti&egrave;re plut&ocirc;t que de la conqu&eacute;rir ? L'organisation avait d&eacute;j&agrave; la moiti&eacute; du globe. Qu'est-ce qui justifie l'annihilation totale ? Quel &eacute;tait le but ultime de cette organisation qu'aucun nom ne d&eacute;signe encore ?</div>
+          <div class="mystery-text"><strong>Quel était le but ?</strong> — Pourquoi détruire la Terre entière plutôt que de la conquérir ? L'organisation avait déjà la moitié du globe. Qu'est-ce qui justifie l'annihilation totale ? Quel était le but ultime de cette organisation qu'aucun nom ne désigne encore ?</div>
         </div>
       </div>
 
@@ -53,6 +52,6 @@ window.PAGES["hope"] = `<div class="page-header">        <div class="page-title"
           <a class="related-link" data-page="humains">&#128640; Les Humains</a>
           <a class="related-link" data-page="upstars">&#9670; Upstars</a>
           <a class="related-link" data-page="garrius">&#9670; Garrius</a>
-          <a class="related-link" data-page="mysteres">&#128274; Myst&egrave;res</a>
+          <a class="related-link" data-page="mysteres">&#128274; Mystères</a>
         </div>
       </div>`;

@@ -1,4 +1,3 @@
-window.PAGES = window.PAGES || {};
 window.PAGES["volioce"] = `<div class="page-header">      <div class="page-title">Volioce</div>
       <div class="page-subtitle">ARCHIPEL DE TUNHGOUD · ANCIENNE PLANÈTE · MONDE DES ARBRES</div>
       <div class="page-tags">
