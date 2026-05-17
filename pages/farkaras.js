@@ -19,7 +19,12 @@ window.PAGES["farkaras"] = `<div class="page-header">        <div class="page-ti
       <div class="wiki-section">
         <p><strong>Farkaras</strong> est le nom donné par les <a class="wlink" data-page="farkeyes">Farkeyes</a> à l'ensemble de leur empire — la totalité des territoires du disque qu'ils ont conquis. Ce n'est pas un lieu unique : c'est une désignation politique qui englobe toutes leurs îles et avant-postes dans <a class="wlink" data-page="tunhgoud">Tunhgoud</a>.</p>
         <p class="mt-10">La conquête de ces territoires est purement symbolique — les Farkeyes ne cherchent pas de ressources ou de terres. L'espace dans le disque est quasi-infini. Ce qu'ils veulent, c'est affirmer qu'ils sont les plus forts. Chaque île conquise est une preuve de plus.</p>
-        <p class="mt-10">Seuls les Sandmen, qui vivent en caravanes dans le désert et se transmettent leurs légendes oralement, conservent encore la mémoire des noms anciens des terres que Farkaras a englouties — mais c'est une mémoire, pas un acte politique.</p>
+        <p class="mt-10">Seuls les <a class="wlink" data-page="sandmen">Sandmen</a>, qui vivent en caravanes dans le désert de <a class="wlink" data-page="gargaras">Gargaras</a> et se transmettent leurs légendes oralement, conservent encore la mémoire des noms anciens des terres que Farkaras a englouties — mais c'est une mémoire, pas un acte politique.</p>
+      </div>
+
+      <div class="wiki-section">
+        <div class="wiki-section-title">⬡ Les Sandmen — Une Espèce Ignorée</div>
+        <p>Les <a class="wlink" data-page="farkeyes">Farkeyes</a> et les <a class="wlink" data-page="sandmen">Sandmen</a> ne se sont <strong>jamais officiellement rencontrés</strong>. Non par évitement mutuel — mais parce que les Sandmen n'entrent pas dans les critères d'intérêt des Farkeyes. Trop petits, pas assez combatifs, sans territoire fixe à conquérir, sans gloire à tirer de leur défaite. Pour <a class="wlink" data-page="jarlarkeyes">Jarlarkeyes</a> et les siens, les Sandmen n'existent tout simplement pas. Pas d'hostilité déclarée — juste une indifférence totale.</p>
       </div>
 
       <div class="related">
@@ -29,5 +34,6 @@ window.PAGES["farkaras"] = `<div class="page-header">        <div class="page-ti
           <a class="related-link" data-page="farkeyes">🦎 Farkeyes</a>
           <a class="related-link" data-page="jarlarkeyes">👁 Jarlarkeyes</a>
           <a class="related-link" data-page="tunhgoud">◎ Tunhgoud</a>
+          <a class="related-link" data-page="sandmen">⬡ Sandmen</a>
         </div>
       </div>`;

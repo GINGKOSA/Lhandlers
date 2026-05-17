@@ -12,7 +12,8 @@ window.PAGES["tunhgoud"] = `<div class="page-header">        <div class="page-ti
         <div class="infobox-title">Tunhgoud</div>
         <div class="infobox-row"><div class="infobox-key">TYPE</div><div class="infobox-val">Disque d'îles volantes</div></div>
         <div class="infobox-row"><div class="infobox-key">ÉCHELLE</div><div class="infobox-val">Galactique</div></div>
-        <div class="infobox-row"><div class="infobox-key">CENTRE</div><div class="infobox-val">Singularité de trou noir</div></div>
+        <div class="infobox-row"><div class="infobox-key">CONTENU DANS</div><div class="infobox-val"><a class="wlink" data-page="destockar">Destockar</a> — trou noir</div></div>
+        <div class="infobox-row"><div class="infobox-key">CENTRE</div><div class="infobox-val"><a class="wlink" data-page="neogarrius">Néo Garrius</a> — singularité transformée</div></div>
         <div class="infobox-row"><div class="infobox-key">CRÉATEURS</div><div class="infobox-val">Les premiers <a class="wlink" data-page="elus">Élus</a> (Firigilians)</div></div>
         <div class="infobox-row"><div class="infobox-key">NOM HUMAIN</div><div class="infobox-val">"Donut" à l'envers</div></div>
       </div>
@@ -28,7 +29,7 @@ window.PAGES["tunhgoud"] = `<div class="page-header">        <div class="page-ti
         <p class="mt-10">Il n'en restait plus que deux.</p>
         <div class="card gold mt-14">
           <div class="card-title">Le Bâtisseur — Premier Sacrifice</div>
-          <p>L'un d'eux était doté d'un pouvoir phénoménal : la capacité de <strong>manipuler la matière à l'échelle atomique</strong>. Combiné à la technologie Firigilians, ce pouvoir lui a permis de construire Tunhgoud — assembler le disque, fragmenter les planètes, placer la boule lumineuse, donner sa forme définitive à l'arche.</p>
+          <p>L'un d'eux était doté d'un pouvoir phénoménal : la capacité de <strong>manipuler la matière à l'échelle atomique</strong>. Combiné à la technologie Firigilians, ce pouvoir lui a permis de construire Tunhgoud — assembler le disque, fragmenter les planètes, placer <a class="wlink" data-page="neogarrius">Néo Garrius</a> au centre, donner sa forme définitive à l'arche.</p>
           <p class="mt-8">L'effort était au-delà de ce qu'un être vivant peut supporter. Il s'est sacrifié en le faisant. Tunhgoud était terminé. Les espèces étaient à l'intérieur. L'arche tenait.</p>
         </div>
         <div class="card red mt-10">
@@ -50,32 +51,28 @@ window.PAGES["tunhgoud"] = `<div class="page-header">        <div class="page-ti
 
       <div class="wiki-section">
         <div class="wiki-section-title">◎ Structure Physique</div>
-        <p>Un immense <strong>disque d'îles volantes</strong> très rapprochées les unes des autres, tournant autour d'une boule lumineuse centrale. Les îles sont des <strong>fragments de planètes habitables</strong> aplaties et fragmentées. Leurs tailles varient radicalement : de petits îlots à d'immenses continents.</p>
+        <p>Un immense <strong>disque d'îles volantes</strong> très rapprochées les unes des autres, tournant autour de <a class="wlink" data-page="neogarrius">Néo Garrius</a> en son centre. Les îles sont des <strong>fragments de planètes habitables</strong> aplaties et fragmentées. Leurs tailles varient radicalement : de petits îlots à d'immenses continents.</p>
         <p class="mt-10">Le <strong>disque tourne sur lui-même</strong>, maintenant la position relative des îles et créant la cohérence physique de Tunhgoud.</p>
-        <p class="mt-10">Le vide entre les îles est <strong>mortel</strong>. Tomber dans l'espace entre deux îles, c'est tomber sans fin — jusqu'à dépasser la zone de protection de la boule lumineuse et se faire spaghettifier par les forces gravitationnelles du trou noir. Pas de fond. Pas de seconde chance.</p>
+        <p class="mt-10">Le vide entre les îles est <strong>mortel</strong>. Tomber dans l'espace entre deux îles, c'est tomber sans fin — jusqu'à dépasser la zone de protection de <a class="wlink" data-page="neogarrius">Néo Garrius</a> et se faire spaghettifier par les forces gravitationnelles de <a class="wlink" data-page="destockar">Destockar</a>. Pas de fond. Pas de seconde chance.</p>
       </div>
 
       <div class="wiki-section">
-        <div class="wiki-section-title">☀ La Boule Lumineuse — Triple Fonction</div>
+        <div class="wiki-section-title">☀ <a class="wlink" data-page="neogarrius">Néo Garrius</a> — Triple Fonction</div>
         <div class="card gold">
           <div class="card-title">1. Source d'énergie / Soleil</div>
-          <p>Sa face active éclaire le disque, sa face éteinte crée 
-l'obscurité. Le disque tournant, chaque île passe alternativement dans 
-la lumière et l'ombre — créant un <strong>cycle jour/nuit naturel</strong>.</p>
+          <p>Sa face active éclaire le disque, sa face éteinte crée l'obscurité. Le disque tournant, chaque île passe alternativement dans la lumière et l'ombre — créant un <strong>cycle jour/nuit naturel</strong>. Plus on s'en rapproche, plus la chaleur est intense — le désert de <a class="wlink" data-page="gargaras">Gargaras</a> en est l'une des régions les plus exposées.</p>
         </div>
         <div class="card gold">
-          <div class="card-title">2. Base de données universelle</div>
-          <p>Elle stocke l'intégralité de la connaissance accumulée par les <a class="wlink" data-page="firigilians">Firigilians</a>. Toute leur science, leurs découvertes, leur histoire — endormie là, <strong>inaccessible pour l'instant</strong>.</p>
+          <div class="card-title">2. Bibliothèque universelle — Archive Firigilians</div>
+          <p>Elle stocke l'intégralité de la connaissance accumulée par les <a class="wlink" data-page="firigilians">Firigilians</a>. Toute leur science, leurs découvertes, leur histoire — endormie là, <strong>inaccessible pour l'instant</strong>. Un téléporteur enfoui dans le désert de <a class="wlink" data-page="gargaras">Gargaras</a> y donne accès — construit jadis pour les <a class="wlink" data-page="sandmen">Pevectus</a>.</p>
         </div>
         <div class="card gold">
-          <div class="card-title">3. Zone de protection contre le trou noir</div>
-          <p>Quiconque s'aventure au-delà des limites de Tunhgoud est <strong>spaghettifié</strong> par les forces gravitationnelles. Pas de mur visible — juste la mort étirée pour ceux qui vont trop loin.</p>
+          <div class="card-title">3. Zone de protection contre <a class="wlink" data-page="destockar">Destockar</a></div>
+          <p>Quiconque s'aventure au-delà des limites de Tunhgoud est <strong>spaghettifié</strong> par les forces gravitationnelles du trou noir. Pas de mur visible — juste la mort étirée pour ceux qui vont trop loin.</p>
         </div>
         <div class="mystery">
           <div class="mystery-icon">🔒</div>
-          <div class="mystery-text">Personne ne sait que Tunhgoud se 
-trouve à l'intérieur d'un trou noir, ni que la boule lumineuse est une 
-singularité doublée d'une archive universelle.</div>
+          <div class="mystery-text">Personne ne sait que Tunhgoud se trouve à l'intérieur du trou noir Destockar, ni que Néo Garrius est une singularité doublée d'une archive universelle — et qu'un accès y existe, enfoui sous le sable de Gargaras.</div>
         </div>
       </div>
 
@@ -89,14 +86,15 @@ singularité doublée d'une archive universelle.</div>
           <div class="climate-zone zone-hot">ARIDE<br>Chaleur</div>
           <div class="climate-zone zone-desert">DÉSERT<br>Extrême</div>
         </div>
-        <p>Plus on se rapproche de la boule lumineuse centrale, plus la 
-chaleur est intense. Les îles tempérées de la zone médiane sont les plus
- habitables.</p>
+        <p>Plus on se rapproche de <a class="wlink" data-page="neogarrius">Néo Garrius</a>, plus la chaleur est intense. Les îles tempérées de la zone médiane sont les plus habitables. Le désert de <a class="wlink" data-page="gargaras">Gargaras</a> se situe en zone extrême, proche du centre.</p>
       </div>
 
       <div class="related">
         <div class="related-title">VOIR AUSSI</div>
         <div class="related-links">
+          <a class="related-link" data-page="neogarrius">☀ Néo Garrius</a>
+          <a class="related-link" data-page="destockar">◎ Destockar</a>
+          <a class="related-link" data-page="gargaras">🏜 Gargaras</a>
           <a class="related-link" data-page="firigilians">🦑 Firigilians</a>
           <a class="related-link" data-page="chronologie">⧗ Chronologie</a>
           <a class="related-link" data-page="farkeyes">🦎 Farkeyes</a>
